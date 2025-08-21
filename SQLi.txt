@@ -1,6 +1,7 @@
-**Further:** 
+=> Further:
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
 https://github.com/InfoSecWarrior/Offensive-Payloads/blob/main/SQLi-query-Join-and-Break.md
+-------------------
 
 0' or '0' = '0
 1' or '1' = '1

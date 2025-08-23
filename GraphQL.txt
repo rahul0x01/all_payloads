@@ -1,5 +1,5 @@
 => Further:
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/GraphQL%20Injection
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/GraphQL%20Injection/README.md
 --------------
 
 {__schema{types{name}}}

